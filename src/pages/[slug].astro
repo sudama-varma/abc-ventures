@@ -1,22 +1,22 @@
 ---
 import Base from "@layouts/Base.astro";
-import PostSingle from "@layouts/PostSingle.astro";
 import config from "@config/config.json";
-import { nativePosts } from "@lib/strapi";
+import { nativeBlogs } from "@lib/strapi";
 import "../styles/nubia-theme.scss";
+import BlogDetail from "@layouts/BlogDetail.astro";
 
 export async function getStaticPaths() {
-  return nativePosts.map((post) => ({
-    params: { slug: post.slug },
-    props: post,
+  return nativeBlogs.map((blog) => ({
+    params: { slug: blog.slug },
+    props: blog,
   }));
 }
 
-const post = Astro.props;
-const { title, content } = post;
+const blog = Astro.props;
+const { title, content } = blog;
 const { summary_length } = config.settings;
 ---
 
 <Base title={title} meta_title={title} description={""} showFooter={false}>
-  <PostSingle post={post} isNative={true} />
+  <BlogDetail blog={blog} isNative={true} />
 </Base>

@@ -1,14 +1,12 @@
 ---
 import { markdownify } from "@lib/utils/textConverter";
-import type { Post } from "../interfaces/post";
-import Sidebar from "./components/sideBar.astro";
-import Intrusted from "./components/youMightBe.astro";
-const { post }: { post: Post; isNative: boolean } = Astro.props as {
-  post: Post;
+import type { Blog } from "../interfaces/blog";
+const { blog }: { blog: Blog; isNative: boolean } = Astro.props as {
+  blog: Blog;
   isNative: boolean;
 };
 
-const { title, content, categories } = post;
+const { title, content, categories } = blog;
 
 const {
   imageUrl,
@@ -18,7 +16,7 @@ const {
   imageMediumUrl,
   imageSmallWidth,
   imageMediumWidth,
-} = post;
+} = blog;
 
 // On this site we only want 1 category
 const category = categories?.[0];
@@ -131,12 +129,6 @@ const category = categories?.[0];
           </div>
         </article>
       </div>
-      <!-- sidebar -->
-      <div class="basis-[calc(25%-20px)] hidden md:block w-full h-auto">
-        <Sidebar />
-      </div>
     </div>
   </div>
 </section>
-<!-- Intrusted -->
-<Intrusted post={post} />

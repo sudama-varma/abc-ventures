@@ -1,12 +1,12 @@
 ---
 import Base from "@layouts/Base.astro";
-import Posts from "@layouts/Posts.astro";
-import { nativePosts } from "@lib/strapi";
+import Blogs from "@layouts/Blogs.astro";
+import { nativeBlogs } from "@lib/strapi";
 import { categories } from "@lib/strapi";
 
 export async function getStaticPaths() {
   const latestCategories = categories.map((item) => {
-    return item.attributes.name.toLowerCase().replace(/ /g, "-");
+    return item.name.toLowerCase().replace(/ /g, "-");
   });
 
   return latestCategories.map((category) => {
@@ -18,12 +18,12 @@ export async function getStaticPaths() {
 
 const { category } = Astro.params;
 
-const filterByCategory = nativePosts.filter(
-  (post) =>
-    post.categories &&
-    post.categories.some(
-      (postCategory) =>
-        postCategory.toLowerCase() === category.replace(/-/g, " ")
+const filterByCategory = nativeBlogs.filter(
+  (blog) =>
+    blog.categories &&
+    blog.categories.some(
+      (blogCategory) =>
+        blogCategory.toLowerCase() === category.replace(/-/g, " ")
     )
 );
 ---
@@ -39,7 +39,7 @@ const filterByCategory = nativePosts.filter(
           <span class="text-[#000] capitalize">{category}</span>
         </p>
       </div>
-      <Posts posts={filterByCategory} fluid={false} />
+      <Blogs blogs={filterByCategory} fluid={false} />
     </div>
   </div>
 </Base>
