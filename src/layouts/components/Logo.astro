@@ -21,7 +21,7 @@ const {
 const { logoUrl } = site[0];
 ---
 
-<a href="/" class="navbar-brand block">
+<a href="/" class="navbar-brand">
   {
     src || logoUrl || logo ? (
       <img
@@ -30,7 +30,7 @@ const { logoUrl } = site[0];
         width={logo_width}
         height={logo_height}
         decoding="async"
-        class="lg:w-[166px] md:w-[100px]"
+        class="h-8"
       />
     ) : logo_text ? (
       logo_text

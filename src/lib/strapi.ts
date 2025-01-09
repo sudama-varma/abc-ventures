@@ -12,7 +12,7 @@ const nativeBlogsData: BlogData[] = await fetchApi<BlogData[]>({
   },
   wrappedByKey: "data",
 });
-console.log(nativeBlogsData)
+
 const siteData: SiteData[] = await fetchApi<SiteData[]>({
   endpoint: "sites",
   query: {
@@ -80,9 +80,11 @@ export const categories: CategriesData[] = (
     },
     wrappedByKey: "data",
   })
-).filter(
-  (cat) =>
-    !!cat.sites?.filter(
-      (site) => site.name === "ABC Venture",
-    ).length,
-);
+)
+// .filter(
+//   (cat) =>
+//     !!cat?.sites?.filter(
+//       (site) => site.name === "ABC Venture",
+//     ).length,
+// );
+

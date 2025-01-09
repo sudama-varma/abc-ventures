@@ -1,0 +1,21 @@
+---
+
+import { categories } from "@lib/strapi";
+---
+
+<div class="flex">
+    <ul class="m-4 flex gap-4">
+      <a href="/blog/">
+        <li class="border p-2" style="border-radius: 15px;">All Categories</li>
+      </a>
+      {
+        categories.map((category) => (
+          <a href={`/blog/${category.slug}/`}>
+            <li class="border p-2" style="border-radius: 15px;">
+              {category.name}
+            </li>
+          </a>
+        ))
+      }
+    </ul>
+  </div>
