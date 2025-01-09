@@ -5,12 +5,11 @@ import config from "@config/config.json";
 import menu from "@config/menu.json";
 import social from "@config/social.json";
 import { markdownify } from "@lib/utils/textConverter";
-import { nativePosts } from "@lib/strapi";
-import Trending from "@layouts/components/Trending.astro";
+import { nativeBlogs } from "@lib/strapi";
 import { AiFillFacebook, AiFillTwitterCircle } from "react-icons/ai/index.js";
 
-const popularPosts = nativePosts.slice(1, 4);
-const trendingPosts = nativePosts.slice(6, 9);
+const popularPosts = nativeBlogs.slice(1, 4);
+const trendingPosts = nativeBlogs.slice(6, 9);
 ---
 
 <footer class="bg-[#000] md:pt-[90px] pt-[40px]">
@@ -64,18 +63,6 @@ const trendingPosts = nativePosts.slice(6, 9);
         {/* social icons */}
         <Social source={social} className="social-icons mb-8" />
       </div>
-      <Trending
-        className="hidden md:flex lg:basis-[33%] md:basis-[calc(50%-20px)] basis-[100%]"
-        posts={popularPosts}
-        title="Popular posts"
-        type="footer"
-      />
-      <Trending
-        className="hidden md:flex lg:basis-[33%] md:basis-[calc(50%-20px)] basis-[100%]"
-        posts={trendingPosts}
-        title="Trending posts"
-        type="footer"
-      />
     </div>
   </div>
 </footer>

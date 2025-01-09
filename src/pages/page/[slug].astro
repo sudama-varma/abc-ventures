@@ -2,11 +2,11 @@
 import config from "@config/config.json";
 import Base from "@layouts/Base.astro";
 import Pagination from "@layouts/components/Pagination.astro";
-import Posts from "@layouts/Posts.astro";
-import { nativePosts } from "@lib/strapi";
+import Blogs from "@layouts/Blogs.astro";
+import { nativeBlogs } from "@lib/strapi";
 
 export async function getStaticPaths() {
-  const totalPages = Math.ceil(nativePosts.length / config.settings.pagination);
+  const totalPages = Math.ceil(nativeBlogs.length / config.settings.pagination);
   const paths = [];
 
   for (let i = 1; i < totalPages; i++) {
@@ -21,17 +21,17 @@ export async function getStaticPaths() {
 
 const { slug } = Astro.params;
 
-const totalPages = Math.ceil(nativePosts.length / config.settings.pagination);
+const totalPages = Math.ceil(nativeBlogs.length / config.settings.pagination);
 const currentPage = slug && !isNaN(Number(slug)) ? Number(slug) : 1;
-const indexOfLastPost = currentPage * config.settings.pagination;
-const indexOfFirstPost = indexOfLastPost - config.settings.pagination;
-const currentPosts = nativePosts.slice(indexOfFirstPost, indexOfLastPost);
+const indexOfLastBlog = currentPage * config.settings.pagination;
+const indexOfFirstBlog = indexOfLastBlog - config.settings.pagination;
+const currentBlogs = nativeBlogs.slice(indexOfFirstBlog, indexOfLastBlog);
 ---
 
 <Base>
   <section class="section">
     <div class="container">
-      <Posts className="mb-16" posts={currentPosts} />
+      <Blogs className="mb-16" blogs={currentBlogs} />
       <Pagination totalPages={totalPages} currentPage={currentPage} />
     </div>
   </section>
