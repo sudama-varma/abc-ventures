@@ -1,7 +1,6 @@
 ---
 import Logo from "@components/Logo.astro";
 import menu from "@config/menu.json";
-import { IoSearch } from "react-icons/io5/index.js";
 
 export interface ChildNavigationLink {
   name: string;
@@ -72,11 +71,12 @@ const { main }: { main: NavigationLink[] } = menu;
       <div class="order-1 ml-auto flex md:order-2 md:ml-0">
         <a
           class="mr-4 inline-block cursor-pointer p-2 text-xl text-[#000] transition hover:text-[#DB3334] md:mr-0"
-          href="/search/"
-          title="search"
-          aria-label="search"
+          href="/contact/"
         >
-          <IoSearch />
+          <button
+            class="bg-[#4f44d1] text-[.875em] rounded-[20px] font-medium text-white py-[0.5em] px-[2.75em] rounded-md hover:bg-[#776bff] ml-0 md:ml-5 border-solid border-1 border-[#4f44d1] leading-tight"
+            >Contact Us</button
+          >
         </a>
       </div>
     </div>
