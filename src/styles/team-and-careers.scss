@@ -1,0 +1,12 @@
+body:has(.team-and-careers-page) .headerWrapper,
+body:has(.team-and-careers-page) .headerWrapper nav{
+    background-color: #1e429f !important;
+}
+.team-and-careers-page{
+    background: #1e429f;
+    .images-card{
+        img{
+            border-radius: 32px;
+        }
+    }
+}

@@ -1,10 +1,34 @@
 ---
 import Base from "@layouts/Base.astro";
-import SubscribeNewsletter from "@layouts/components/SubscribeNewsletter.astro";
+import CompanyCultureSection from "@layouts/components/CompanyCultureSection.astro";
+
+
 ---
 
 <Base showFooter={true}>
-  <div class=" p-4 my-5">
+  <section class="team-and-careers-page py-5">
+    <div class="w-full flex justify-center my-5">
+      <div class="w-1/2">
+        <h1 class="text-white text-center">Embark on a Career That</h1>
+        <h1 class="text-center text-[#9d95fa]">Redefines Industries</h1>
+        <p class="text-white text-center px-4">
+          Join ABC Ventures and be a part of a team that’s driving innovation
+          and transforming the future of startups worldwide.
+        </p>
+      </div>
+    </div>
+    <div class="pb-3">
+      <div class="w-full flex flex-wrap images-card">
+        <img class="w-1/2 p-4" src="/images/content-gallery-1-1024x417.jpg" />
+        <img class="w-1/4 p-4" src="/images/content-gallery-2.jpg" />
+        <img class="w-1/4 p-4" src="/images/content-gallery-3.jpg" />
+        <img class="w-1/4 p-4" src="/images/content-gallery-4.jpg" />
+        <img class="w-1/2 p-4" src="/images/content-gallery-5-1024x417.jpg" />
+        <img class="w-1/4 p-4" src="/images/content-gallery-6.jpg" />
+      </div>
+    </div>
+  </section>
+  <div class="p-4 my-5 border-b">
     <div class="grid grid-rows grid-cols-1 lg:grid-cols-2 gap-16">
       <div class="px-4">
         <h2 class="my-0 text-[3rem] font-semibold text-black-900">
@@ -27,72 +51,88 @@ import SubscribeNewsletter from "@layouts/components/SubscribeNewsletter.astro";
     </div>
   </div>
 
-  <div class="row p-5">
-     <div class="col-6">
-        <h1>Explore Our Current Openings</h1>
-        <p>
-            Ready to make your mark? Take a look at our exciting job opportunities.
+  <section class="container">
+    <div>
+      <h1>Our Impact <span class="text-[#9d95fa]">by Numbers</span></h1>
+      <p>Here’s a glimpse of the tangible impact our team has made:</p>
+    </div>
+    <div class="flex flex-wrap">
+      <div class="w-1/4 p-4">
+        <h3 class="text-[#9d95fa]">20+ Startups Funded</h3>
+        <p>Investing in the future, one startup at a time.</p>
+      </div>
+      <div class="w-1/4 p-4">
+        <h3 class="text-[#9d95fa]">150+ Countries Reached</h3>
+        <p>Our global footprint expands across continents.</p>
+      </div>
+
+      <div class="w-1/4 p-4">
+        <h3 class="text-[#9d95fa]">100% Employee Growth</h3>
+        <p>Doubling our team to double our impact.</p>
+      </div>
+
+      <div class="w-1/4 p-4">
+        <h3 class="text-[#9d95fa]">10+ Industry Awards</h3>
+        <p>Recognition for innovation and excellence</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="row p-5 container my-5" >
+    <div class="col-6">
+      <h1>Explore Our Current Openings</h1>
+      <p>
+        Ready to make your mark? Take a look at our exciting job opportunities.
+      </p>
+    </div>
+    <div class="col-6">
+      <div class="px-4">
+        <span
+          class="inline-block bg-purple-100 text-purple-600 text-xs font-semibold uppercase tracking-wide px-2 py-1 rounded"
+        >
+          Analytics Department
+        </span>
+        <h2 class="text-2xl font-semibold mb-2.5 leading-7 text-[#111928]">
+          Senior Data Analyst
+        </h2>
+        <p class="text-gray-500 text-sm mb-2.5 mt-0">December 21, 2023</p>
+        <p class="text-base mt-0 mb-2.5 text-gray-500 font-medium">
+          Static websites are now used to bootstrap lots of websites and are
+          becoming the basis for a variety of tools that even influence both web
+          designers and developers influence both web designers and developers.
         </p>
-     </div>
-     <div class="col-6">
-        <div class="px-4">
-            <span
-                class="inline-block bg-purple-100 text-purple-600 text-xs font-semibold uppercase tracking-wide px-2 py-1 rounded">
-                Analytics Department
-            </span>
-            <h2 class="text-2xl font-semibold  mb-2.5 leading-7 text-[#111928]">
-                Senior Data Analyst
-            </h2>
-            <p class="text-gray-500 text-sm mb-2.5 mt-0">December 21, 2023</p>
-            <p class="text-base  mt-0 mb-2.5 text-gray-500 font-medium">
-                Static websites are now used to bootstrap lots of websites and are becoming the basis for a variety of tools that even influence both web designers and developers influence both web designers and developers.
-            </p>
-            <a href="#"
-                class="text-purple-600 text-base font-medium inline-flex items-center mt-4 hover:text-[#443ab9]">
-                Read more →
-            </a>
-        </div>
-        <div class="px-4">
-            <h2 class="text-2xl font-semibold  mb-2.5 leading-7 text-[#111928]">
-                Wearable Tech in Advertising: Charting the Course of Immersive Marketing
-            </h2>
-            <span
-                class="inline-block bg-purple-200 text-purple-600 text-xs font-semibold uppercase tracking-wide px-2 py-1 rounded">
-                Updates
-            </span>
-            <p class="text-gray-500 text-sm mb-2.5 mt-0">December 21, 2023</p>
-            <p class="text-base  mt-0 mb-2.5 text-gray-500 font-medium">
-                In the dynamic world of technology and advertising, wearable tech is emerging as a
-                frontier brimming with innovative opportunities. As an expert in tech gadgets and
-                their intersection with advertising, I am excited to delve into how wearable
-                technology is not…
-            </p>
-            <a href="#"
-                class="text-purple-600 text-base font-medium inline-flex items-center mt-4 hover:text-[#443ab9]">
-                Read more →
-            </a>
-        </div>
-        <div class="px-4">
-            <h2 class="text-2xl font-semibold  mb-2.5 leading-7 text-[#111928]">
-                Wearable Tech in Advertising: Charting the Course of Immersive Marketing
-            </h2>
-            <span
-                class="inline-block bg-purple-200 text-purple-600 text-xs font-semibold uppercase tracking-wide px-2 py-1 rounded">
-                Updates
-            </span>
-            <p class="text-gray-500 text-sm mb-2.5 mt-0">December 21, 2023</p>
-            <p class="text-base  mt-0 mb-2.5 text-gray-500 font-medium">
-                In the dynamic world of technology and advertising, wearable tech is emerging as a
-                frontier brimming with innovative opportunities. As an expert in tech gadgets and
-                their intersection with advertising, I am excited to delve into how wearable
-                technology is not…
-            </p>
-            <a href="#"
-                class="text-purple-600 text-base font-medium inline-flex items-center mt-4 hover:text-[#443ab9]">
-                Read more →
-            </a>
-        </div>
-     </div>
+        <a
+          href="#"
+          class="text-purple-600 text-base font-medium inline-flex items-center mt-4 hover:text-[#443ab9]"
+        >
+          Read more →
+        </a>
+      </div>
+      <div class="px-4">
+        <h2 class="text-2xl font-semibold mb-2.5 leading-7 text-[#111928]">
+          Wearable Tech in Advertising: Charting the Course of Immersive
+          Marketing
+        </h2>
+        <span
+          class="inline-block bg-purple-200 text-purple-600 text-xs font-semibold uppercase tracking-wide px-2 py-1 rounded"
+        >
+          Updates
+        </span>
+        <p class="text-gray-500 text-sm mb-2.5 mt-0">December 21, 2023</p>
+        <p class="text-base mt-0 mb-2.5 text-gray-500 font-medium">
+          In the dynamic world of technology and advertising, wearable tech is
+          emerging as a frontier brimming with innovative opportunities. As an
+          expert in tech gadgets and their intersection with advertising, I am
+          excited to delve into how wearable technology is not…
+        </p>
+        <a
+          href="#"
+          class="text-purple-600 text-base font-medium inline-flex items-center mt-4 hover:text-[#443ab9]"
+        >
+          Read more →
+        </a>
+      </div>
+    </div>
   </div>
-  <SubscribeNewsletter />
+  <CompanyCultureSection />
 </Base>
