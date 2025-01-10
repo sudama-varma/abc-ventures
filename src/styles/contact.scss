@@ -12,6 +12,7 @@ body:has(.contact-us-page) .headerWrapper nav{
     margin-top: -245px !important;
     border-radius: 32px;
     padding: 2rem;
+    max-width: 810px;
 
     .btn-send-message{
         background:linear-gradient(0deg, rgba(0,0,0,0.2), rgba(0,0,0,0.2)),#5e52e8;
