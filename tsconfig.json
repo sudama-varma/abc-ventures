@@ -4,6 +4,7 @@
     "baseUrl": ".",
     "resolveJsonModule": true,
     "allowSyntheticDefaultImports": true,
+    "jsx": "react",
     "paths": {
       "@layouts/*": ["./src/layouts/*"],
       "@components/*": ["./src/layouts/components/*"],
