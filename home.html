@@ -10,7 +10,7 @@
         rel="stylesheet">
     <link href="/style.scss" rel="stylesheet">
     <style>
-        body {
+        /* body {
             font-family: "Plus Jakarta Sans", serif;
             font-size: 1em;
             transition: 0.5s all ease-in-out;
@@ -52,50 +52,13 @@
             .navbar-expand-md .navbar-collapse {
                 justify-content: flex-end;
             }
-        }
+        } */
 
         /* banner section css  start */
-        section.homeBanner {
-            /* background: url('../public/images/hero-image.webp'), #111928;
-            background-position: right bottom; */
+        /* section.homeBanner {
             background-repeat: no-repeat;
             padding-top: 7rem;
             padding-bottom: 4rem;
-        }
-
-        /* a.liveBtn {
-            color: #f0efff;
-            text-decoration: none;
-            font-size: .875rem;
-            line-height: 1.25rem;
-            border: 1px solid #5e52e8;
-            border-radius: 100px;
-            padding: .25rem 0.5rem;
-            display: flex;
-            align-items: center;
-            max-width: fit-content;
-            font-weight: 500;
-            margin-bottom: 1.75rem;
-        } */
-
-        /* a.liveBtn span {
-            background: #d9d6ff;
-            padding: 0.275rem 0.75rem;
-            color: #443ab9;
-            border-radius: 100px;
-            font-size: 0.75rem;
-            margin-right: 0.75rem;
-        } */
-
-        /* a.liveBtn svg {
-            width: 16px;
-            height: 16px;
-            margin-left: .5rem;
-        } */
-
-        /* .bannerContent button.scrollBtn:hover {
-            background-color: #776bff;
-            color: #f9f9f9;
         } */
     </style>
     <script>
@@ -191,15 +154,15 @@
 
         </header>
         <!-- Home Banner start -->
-        <section class="homeBanner bg-[url('../public/images/hero-image.webp')] bg-auto bg-right-bottom bg-[#111928] pt-[7rem] pb-[4rem]">
+        <section class="homeBanner  max-sm:pt-[2rem]  max-sm:pb-[2rem] max-md:pt-[4rem] bg-no-repeat bg-[url('../public/images/hero-image.webp')] bg-auto bg-right-bottom bg-[#111928] pt-[7rem] pb-[4rem]">
             <div class="container mx-auto px-4">
                 <div class="row">
                     <div class="col-sm-12">
-                        <div class="bannerContent flex gap-[7rem] flex-col">
+                        <div class="bannerContent flex max-sm:gap-[15px] max-md:gap-[3rem] gap-[7rem] flex-col">
                             <div class="">
                                 <a href="#" 
-                                class="liveBtn max-w-fit text-[#f0efff] text-[.875rem] border border-solid border-color-[#5e52e8] rounded-full flex items-center py-[.25rem] px-[0.5rem] mb-[1.75rem]">
-                                    <span class="flex bg-[#d9d6ff] px-[0.75rem] py-[0.275rem] text-[#443ab9] rounded-full text-[0.75rem] me-[0.75rem]">New</span>ABC Venturing is LIVE now!
+                                class="liveBtn mb-[1.75rem] max-sm:mb-[0.75rem] max-w-fit text-[#f0efff] text-[.875rem] border border-solid border-color-[#5e52e8] rounded-full flex items-center py-[.25rem] px-[0.5rem] ">
+                                    <span class="flex bg-[#d9d6ff] px-[0.75rem] py-[0.275rem] text-[#443ab9] rounded-full text-[0.75rem] mr-[0.75rem]">New</span>ABC Venturing is LIVE now!
                                     <!-- width: 16px;
                                     height: 16px;
                                     margin-left: .5rem; -->
@@ -210,7 +173,7 @@
                                             clip-rule="evenodd"></path>
                                     </svg>
                                 </a>
-                                <h1 class="text-[6rem] text-[#ebf5ff] max-w-[56rem] font-semibold">Shaping the Future of
+                                <h1 class="max-sm:text-[2rem] text-[6rem] max-md:text-[4rem] max-lg:text-[5rem] text-[#ebf5ff] max-w-[56rem] font-semibold">Shaping the Future of
                                     Startups with <span class="text-[#9d95fa] font-medium">ABC Ventures</span></h1>
                             </div>
                             <div class="btns">
@@ -587,14 +550,14 @@
                                 and updates in the investment space delivered straight to your inbox..</p>
                             <form class="newsletter-subscribe-form">
                                 <div class="flex justify-center"> 
-                                    <input class="focus:outline-none focus:ring focus:ring-1  focus:ring-[#1064f2] rounded-l-[1rem] bg-white border border-solid border-color[#6b7280] max-w-[24rem] w-[384px] px-[.5rem] py-[0.75rem]" type="email" class="email" placeholder="Enter your email..." name="email" required=""/>
+                                    <input class="max-w-[24rem] w-full sm:w-[384px] focus:outline-none focus:ring focus:ring-1  focus:ring-[#1064f2] rounded-l-[1rem] bg-white border border-solid border-color[#6b7280]  px-[.5rem] py-[0.75rem]" type="email" class="email" placeholder="Enter your email..." name="email" required=""/>
                                     <button class="bg-[#9d95fa] py-[.875rem] px-[1.5rem] rounded-r-[1rem] text-[17px] text-white "  type="submit" class="submit" name="submit">Subscribe</button>
                                 </div> 
                                 <p class="py-2 text-[#6b7280]">We care about the protection of your data. Read our <a href="#" class="text-[#111928]">Privacy Policy.</a></p>   
                             </form>
                         </div>
                     </div>
-            </div>
+                </div>
             </div>
         </section>
         <!-- Blog section html end-->
