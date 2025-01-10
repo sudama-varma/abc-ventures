@@ -12,57 +12,27 @@ const popularPosts = nativeBlogs.slice(1, 4);
 const trendingPosts = nativeBlogs.slice(6, 9);
 ---
 
-<footer class="bg-[#000] md:pt-[90px] pt-[40px]">
-  <div class="container">
-    <div class="flex md:flex-wrap lg:flex-nowrap align-top gap-10">
-      <div
-        class="lg:basis-[33%] md:basis-[calc(50%-20px)] basis-[100%] text-left"
-      >
-        {/* footer menu */}
-        <FtrLogo />
-        <!-- description -->
-        <p class="text-[#fff] text-[14px]">
-          New sort of Meddiah. We post fun and short articles for your everyday
-          entertainment. Got tips? Contact us by e-mail at
-          info@giremaholdings.com or by sending mail to the address:
-          <br />
-          Girema Holdings Limited,
-          <br />
-          Karaiskaki 13,
-          <br />
-          3032 Limassol, Cyprus
-        </p>
-        {/* copyright */}
-        <p
-          class="text-[#fff] text-[14px] my-[20px]"
-          set:html={markdownify(config.params.copyright)}
-        />
-        <!-- social icons -->
-        <div class="w-full flex items-center gap-[5px] mb-[20px]">
-          <span class="text-[#fff] text-[32px]"
-            ><a href="#"><AiFillFacebook /></a></span
-          >
-          <span class="text-[#fff] text-[32px]"
-            ><a href="#"><AiFillTwitterCircle /></a></span
-          >
-        </div>
-        <ul class="mb-4 flex flex-wrap gap-[10px]">
-          {
-            menu.footer.map((menu) => (
-              <li class="block w-[calc(50%-5px)]">
-                <a
-                  href={menu.url}
-                  class="text-white hover:text-white transition-all"
-                >
-                  {menu.name}
-                </a>
-              </li>
-            ))
-          }
-        </ul>
-        {/* social icons */}
-        <Social source={social} className="social-icons mb-8" />
+<footer class="footer py-5 bg-[#443ab9]">
+  <div class="container mx-auto px-4">
+      <div class="row">
+          <div class="col-sm-12">
+              <div class="footerContent text-center py-4 flex items-center flex flex-col gap-[2rem]">
+                  <a href="#">
+                      <img src="../public/images/abcLogo.svg" alt="abcLogo" />
+                  </a>
+                  <ul>
+                      <li class="flex justify-center gap-[15px]">
+                          <a href="#" class="decoration-0 text-white text-[1rem] hover:decoration-1">Home</a>
+                          <a href="#" class="decoration-0 text-white text-[1rem] hover:decoration-1">Blog</a>
+                          <a href="#" class="decoration-0 text-white text-[1rem] hover:decoration-1">Team &
+                              Careers</a>
+                          <a href="#"
+                              class="decoration-0 text-white text-[1rem] hover:decoration-1">Contact</a>
+                      </li>
+                  </ul>
+                  <p class="text-[0.65em] text-white">© 2024 – ABC Ventures, Inc. All rights reserved</p>
+              </div>
+          </div>
       </div>
-    </div>
   </div>
 </footer>

@@ -15,3 +15,52 @@
 @layer utilities {
   @import "utilities";
 }
+
+
+body {
+  font-family: "Plus Jakarta Sans", serif;
+  font-size: 1em;
+  transition: 0.5s all ease-in-out;
+}
+ul.navbar-nav button:hover {
+  background-color: #776bff;
+  border-color: #776bff;
+}
+ul.navbar-nav {
+  gap: 1.5rem;
+}
+
+ul.navbar-nav button {
+  font-size: .875em;
+  background-color: #4f44d1;
+  border: 1px solid #4f44d1;
+  color: #fff;
+  border-radius: 20px;
+  padding: 0.5em 2.75em;
+  font-weight: 600;
+  line-height: 1.25;
+}
+
+ul.navbar-nav li.nav-item a.nav-link {
+  font-weight: 500;
+  color: #fff;
+  opacity: 1;
+  line-height: 1.25;
+}
+
+ul.navbar-nav li.nav-item a.nav-link.active,
+ul.navbar-nav li.nav-item a.nav-link:hover {
+  color: #d8a5f2;
+}
+
+@media (min-width: 768px) {
+  .navbar-expand-md .navbar-collapse {
+      justify-content: flex-end;
+  }
+}
+
+section.homeBanner {
+  background-repeat: no-repeat;
+  padding-top: 7rem;
+  padding-bottom: 4rem;
+}
