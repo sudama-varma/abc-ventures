@@ -20,7 +20,7 @@ const ContactForm = () => {
 
             <label className='text-[#000] font-bold'>Phone number</label>
             <div className='mb-3'>
-              <input type="email" className='py-2 px-4 rounded-full border-0 w-full  focus:border-1 focus:border-color[#5e52e8]' placeholder='name@example.com' name="name" required />
+              <input type="text"  className='py-2 px-4 rounded-full border-0 w-full  focus:border-1 focus:border-color[#5e52e8]' placeholder='081234 56789' name="name" required />
             </div>
 
             <label className='text-[#000] font-bold'>Your Message</label>
