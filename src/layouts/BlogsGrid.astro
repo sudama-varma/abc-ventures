@@ -21,10 +21,11 @@ const readNextBlogs = nativeBlogs.slice(0, 6);
                 class="w-full object-cover rounded-[0.5rem] mb-3"
               />
               <div class="py-2">
+                <a href={`/${blog.slug}/`}>
                 <h2
                   set:html={blog?.title}
-                  class="text-2xl font-semibold  my-1 text-[#111928]"
-                ></h2>
+                  class="text-2xl font-semibold  my-1 text-[#111928] hover:underline"
+                ></h2></a>
                 <a
                   href={`/${blog?.slug}/`}
                   class="text-blue-600 text-base font-medium inline-flex items-center hover:text-[#443ab9]"
