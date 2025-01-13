@@ -4,6 +4,8 @@ import config from "@config/config.json";
 import { nativeBlogs } from "@lib/strapi";
 import "../styles/nubia-theme.scss";
 import BlogDetail from "@layouts/BlogDetail.astro";
+import HaveQuestionContactUs from "@layouts/components/HaveQuestionContactUs.astro";
+import BlogsGrid from "@layouts/BlogsGrid.astro";
 
 export async function getStaticPaths() {
   return nativeBlogs.map((blog) => ({
@@ -19,4 +21,6 @@ const { summary_length } = config.settings;
 
 <Base title={title} meta_title={title} description={""} showFooter={false}>
   <BlogDetail blog={blog} isNative={true} />
+  <BlogsGrid />
+  <HaveQuestionContactUs />
 </Base>
