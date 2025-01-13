@@ -5,6 +5,23 @@ body:has(.contact-us-page) .headerWrapper nav{
 .contact-us-page{
     background: #1e429f;
 }
+.headerWrapper nav a{
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+body:has(.blog-page) .headerWrapper,
+body:has(.blog-page) .headerWrapper nav{
+    background-color: #ffffff !important;
+    a{
+        color: #000000;
+    }
+    img{
+        filter: invert(1);
+    }
+}
+
+
 .contact-form{
     background-color: #ebf5ff;
     margin-left: auto;
