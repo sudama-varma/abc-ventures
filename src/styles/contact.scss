@@ -11,10 +11,19 @@ body:has(.contact-us-page) .headerWrapper nav{
 }
 
 body:has(.blog-page) .headerWrapper,
-body:has(.blog-page) .headerWrapper nav,
-body:has(.blog-detail) .headerWrapper,
-body:has(.blog-detail) .headerWrapper nav{
-    background-color: #ffffff !important;
+body:has(.blog-page) .headerWrapper nav{
+    background-color: #FFFFFF !important;
+    a{
+        color: #000000;
+    }
+    img{
+        filter: invert(1);
+    }
+}
+
+body:has(.blog-detail-page) .headerWrapper,
+body:has(.blog-detail-page) .headerWrapper nav{
+    background-color: #f9f9f9  !important;
     a{
         color: #000000;
     }
