@@ -1,11 +1,16 @@
+---
+import { scrollToElement } from "@lib/utils";
+import ScrollButton from "@components/ScrollButton";
+---
+
 <section class="homeBanner  max-sm:pt-[2rem]  max-sm:pb-[2rem] max-md:pt-[4rem] bg-no-repeat bg-[url('/images/hero-image.webp')] bg-auto bg-right-bottom bg-[#111928] pt-[7rem] pb-[4rem]">
     <div class="container mx-auto px-4">
         <div class="row">
             <div class="col-sm-12">
                 <div class="bannerContent flex max-sm:gap-[15px] max-md:gap-[3rem] gap-[7rem] flex-col">
                     <div class="">
-                        <a href="#" 
-                        class="liveBtn mb-[1.75rem] max-sm:mb-[0.75rem] max-w-fit text-[#f0efff] text-[.875rem] border border-solid border-color-[#5e52e8] rounded-full flex items-center py-[.25rem] px-[0.5rem]">
+                        <a href="/contact/" 
+                        class="liveBtn mb-[1.75rem] max-sm:mb-[0.75rem] max-w-fit text-[#f0efff] text-[.875rem] border border-solid border-[#5e52e8] rounded-full flex items-center py-[.25rem] px-[0.5rem]">
                             <span class="flex bg-[#d9d6ff] px-[0.75rem] py-[0.275rem] text-[#443ab9] rounded-full text-[0.75rem] mr-[0.75rem]">New</span>ABC Venturing is LIVE now!
                             <!-- width: 16px;
                             height: 16px;
@@ -21,17 +26,16 @@
                             Startups with <span class="text-[#9d95fa] font-medium">ABC Ventures</span></h1>
                     </div>
                     <div class="btns flex max-sm:flex-col  items-center">
-                        <button
-                            class="max-w-fit scrollBtn text-[#f9f9f9] flex items-center gap-2 font-semibold bg-[#4f44d1] rounded-[1rem] px-[5rem] py-[.875rem] text-[1rem] hover:bg-[#776bff] hover:text-[#f9f9f9]">Scroll
-                            down
+                        <ScrollButton client:load elementId="vision-section-container" customClass="max-w-fit scrollBtn text-[#f9f9f9] flex items-center gap-2 font-semibold bg-[#4f44d1] rounded-[1rem] px-[5rem] py-[.875rem] text-[1rem] hover:bg-[#776bff] hover:text-[#f9f9f9]">
+                            Scroll down
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 17.25 12 21m0 0-3.75-3.75M12 21V3" />
                             </svg>
-                              
-                        </button>
-                        <button
-                            class="px-[0.75rem] max-w-fit py-[1.25rem] text-[#f0efff] font-semibold text-[1.25rem] bg-transparent  border-0">Our
-                            Company</button>
+                        </ScrollButton>
+                        
+                        <ScrollButton client:load elementId="culture-section-container" 
+                            customClass="px-[0.75rem] max-w-fit py-[1.25rem] text-[#f0efff] font-semibold text-[1.25rem] bg-transparent  border-0">Our
+                            Company</ScrollButton>
                     </div>
                 </div>
             </div>

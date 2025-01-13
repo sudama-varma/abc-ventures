@@ -1,237 +1,123 @@
 ---
+import config from "@config/config.json";
 import Base from "@layouts/Base.astro";
 import SubscribeNewsletter from "@layouts/components/SubscribeNewsletter.astro";
 import BlogCategories from "@layouts/components/BlogCategories.astro";
+import Pagination from "@layouts/components/Pagination.astro";
+import { nativeBlogs } from "@lib/strapi";
+
+import dateFormat from "@lib/utils/dateFormat";
+import { removeSpecialChars } from "@lib/utils/textConverter";
+import Blogs from "@layouts/Blogs.astro";
+const heroBlog = nativeBlogs[0];
+const listBlogs = nativeBlogs.slice(1, 4);
+
+const totalPages = Math.ceil(nativeBlogs.length / config.settings.pagination);
+const currentBlogs = nativeBlogs.slice(0, config.settings.pagination);
+
+const { summary_length } = config.settings;
 ---
 
 <Base showFooter={true}>
-<div class="bg-[#ebf5ff] blog-page max-md:py-[6rem] py-[3rem]">
+  <div class="bg-[#ebf5ff] blog-page max-md:py-[6rem] py-[3rem]">
     <div class="container mx-auto px-4">
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-[5rem] mt-[4rem]">
-            <div class="flex flex-col gap-6 items-center max-w-screen-md mx-auto ">
-                <div class="rounded-2xl overflow-hidden ">
-                    <img src="/images/Wearable-Tech-in-Advertising.jpg" alt="Wearable Tech"
-                        class="w-full object-cover  rounded-[0.5rem] mb-[1.5rem]" />
-                    <div class="">
-                        <span
-                            class="inline-block bg-purple-200 text-[#100d06] text-xs font-semibold capitalize tracking-wide px-2 py-1 rounded">
-                            Updates
-                        </span>
-                        <h2 class="text-2xl font-semibold  my-2.5 leading-7 text-[#111928]">
-                            Wearable Tech in Advertising: Charting the Course of Immersive Marketing
-                        </h2>
-                        <p class="text-gray-500 text-sm mb-2.5 mt-0">December 21, 2023</p>
-                        <p class="text-base  mt-0 mb-2.5 text-[#6b7280] font-medium">
-                            In the dynamic world of technology and advertising, wearable tech is emerging as a
-                            frontier brimming with innovative opportunities. As an expert in tech gadgets and
-                            their intersection with advertising, I am excited to delve into how wearable
-                            technology is not…
-                        </p>
-                        <a href="#"
-                            class="text-purple-600 text-base font-medium inline-flex items-center mt-4 hover:text-[#443ab9]">
-                            Read more <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
-                              </svg>
-                              
-                        </a>
-                    </div>
-                </div>
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-[5rem] mt-[4rem]">
+        <div class="flex flex-col gap-6 items-center max-w-screen-md mx-auto">
+          <div class="overflow-hidden">
+            <img
+              src={heroBlog.imageUrl}
+              alt="Wearable Tech"
+              class="w-full object-cover rounded-[0.5rem] mb-[1.5rem]"
+            />
+            <div class="">
+              <span
+                class="inline-block bg-purple-200 text-[#100d06] text-xs font-semibold capitalize tracking-wide px-2 py-1 rounded"
+              >
+                {heroBlog?.categories?.[0]}
+              </span>
+              <a href={`/${heroBlog?.slug}/`}>
+                <h2
+                class="text-2xl font-semibold my-2.5 leading-7 text-[#111928] hover:underline"
+              >
+                {heroBlog?.title}
+              </h2>
+              </a>
+              <p class="text-gray-500 text-sm mb-2.5 mt-0">
+                {dateFormat(heroBlog?.createdAt)}
+              </p>
+              <p class="text-base mt-0 mb-2.5 text-[#6b7280] font-medium">
+                {removeSpecialChars(heroBlog?.content.slice(0, 400))}
+              </p>
+              <a
+                href={`/${heroBlog?.slug}/`}
+                class="text-purple-600 text-base font-medium inline-flex items-center mt-4 hover:text-[#443ab9]"
+              >
+                Read more <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  class="w-5"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"></path>
+                </svg>
+              </a>
             </div>
-            <div class="flex flex-col gap-6 items-center max-w-screen-md mx-auto ">
-                <div class="">
-                    <h2 class="text-2xl font-semibold  my-2.5 leading-7 text-[#100d06]">
-                        Wearable Tech in Advertising: Charting the Course of Immersive Marketing
-                    </h2>
-                    <span
-                        class="inline-block bg-purple-200 text-[#100d06] text-xs font-semibold capitalize tracking-wide px-2 py-1 rounded">
-                        Updates
-                    </span>
-                    <!-- <p class="text-gray-500 text-sm mb-2.5 mt-0">December 21, 2023</p> -->
-                    <p class="text-base  mt-0 mb-2.5 text-[#6b7280] font-medium">
-                        In the dynamic world of technology and advertising, wearable tech is emerging as a
-                        frontier brimming with innovative opportunities. As an expert in tech gadgets and
-                        their intersection with advertising, I am excited to delve into how wearable
-                        technology is not…
-                    </p>
-                    <a href="#"
-                        class="text-[#776bff] text-base font-medium inline-flex items-center  hover:text-[#443ab9]">
-                        Read more <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 ml-1.5">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
-                          </svg>
-                    </a>
-                </div>
-                <div class="">
-                    <h2 class="text-2xl font-semibold  my-2.5 leading-7 text-[#100d06]">
-                        Wearable Tech in Advertising: Charting the Course of Immersive Marketing
-                    </h2>
-                    <span
-                        class="inline-block bg-purple-200 text-[#100d06] text-xs font-semibold capitalize tracking-wide px-2 py-1 rounded">
-                        Updates
-                    </span>
-                    <!-- <p class="text-gray-500 text-sm mb-2.5 mt-0">December 21, 2023</p> -->
-                    <p class="text-base  mt-0 mb-2.5 text-[#6b7280] font-medium">
-                        In the dynamic world of technology and advertising, wearable tech is emerging as a
-                        frontier brimming with innovative opportunities. As an expert in tech gadgets and
-                        their intersection with advertising, I am excited to delve into how wearable
-                        technology is not…
-                    </p>
-                    <a href="#"
-                        class="text-[#776bff] text-base font-medium inline-flex items-center hover:text-[#443ab9]">
-                        Read more <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 ml-1.5">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
-                          </svg>
-                    </a>
-                </div>
-                <div class="">
-                    <h2 class="text-2xl font-semibold  my-2.5 leading-7 text-[#100d06]">
-                        Wearable Tech in Advertising: Charting the Course of Immersive Marketing
-                    </h2>
-                    <span
-                        class="inline-block bg-purple-200 text-[#100d06] text-xs font-semibold capitalize tracking-wide px-2 py-1 rounded">
-                        Updates
-                    </span>
-                    <!-- <p class="text-gray-500 text-sm mb-2.5 mt-0">December 21, 2023</p> -->
-                    <p class="text-base  mt-0 mb-2.5 text-[#6b7280] font-medium">
-                        In the dynamic world of technology and advertising, wearable tech is emerging as a
-                        frontier brimming with innovative opportunities. As an expert in tech gadgets and
-                        their intersection with advertising, I am excited to delve into how wearable
-                        technology is not…
-                    </p>
-                    <a href="#"
-                        class="text-[#776bff] text-base font-medium inline-flex items-center hover:text-[#443ab9]">
-                        Read more <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 ml-1.5">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
-                          </svg>
-                    </a>
-                </div>
-            </div>
-        </div>   
-    </div>
-</div>    
-<div class="bg-[#fafaff]">
-  <BlogCategories />
-  <div class="container mx-auto px-4 lg:py-8 py-8"> 
-    <div class=" rounded-2xl overflow-hidden py-6 flex gap-3">
-        <div class="col-4">
-            <img src="/images/Wearable-Tech-in-Advertising.jpg" alt="Wearable Tech"
-            class="w-full object-cover rounded-[0.5rem] mb-[1.5rem]" />
+          </div>
         </div>
-        <div class="px-4">
-            <h2 class="text-2xl font-semibold  mb-2.5 leading-7 text-[#111928]">
-                Wearable Tech in Advertising: Charting the Course of Immersive Marketing
-            </h2>
-            <div class="flex gap-2 items-center mb-2.5">
-                <span
-                    class="inline-block bg-purple-200 text-purple-600 text-xs font-semibold uppercase tracking-wide px-2 py-1 rounded">
-                    Updates
-                </span>
-                <p class="text-gray-500 text-sm mb-0 mt-0">December 21, 2023</p>
-            </div>
-            <p class="text-base  mt-0 mb-2.5 text-gray-500 font-medium">
-                In the dynamic world of technology and advertising, wearable tech is emerging as a
-                frontier brimming with innovative opportunities. As an expert in tech gadgets and
-                their intersection with advertising, I am excited to delve into how wearable
-                technology is not…
-            </p>
-            <a href="#"
-                class="text-purple-600 text-base font-medium inline-flex items-center mt-4 hover:text-[#443ab9]">
-                Read more <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
-                  </svg>
+        <div class="flex flex-col gap-6 items-center max-w-screen-md mx-auto">
+          {
+            listBlogs?.map((blog) => (
+              <div class="">
+                <a href={`/${blog?.slug}/`}>
+                <h2 class="text-2xl font-semibold my-2.5 leading-7 text-[#100d06] hover:underline">
+                  {blog?.title}
+                </h2>
             </a>
-        </div>
-    </div>
-    <div class=" rounded-2xl overflow-hidden py-6 flex gap-3">
-        <div class="col-4">
-            <img src="/images/Wearable-Tech-in-Advertising.jpg" alt="Wearable Tech"
-            class="w-full object-cover rounded-[0.5rem] mb-[1.5rem]" />
-        </div>
-        <div class="px-4">
-            <h2 class="text-2xl font-semibold  mb-2.5 leading-7 text-[#111928]">
-                Wearable Tech in Advertising: Charting the Course of Immersive Marketing
-            </h2>
-            <div class="flex gap-2 items-center mb-2.5">
-                <span
-                    class="inline-block bg-purple-200 text-purple-600 text-xs font-semibold uppercase tracking-wide px-2 py-1 rounded">
-                    Updates
+                <span class="inline-block bg-purple-200 text-[#100d06] text-xs font-semibold capitalize tracking-wide px-2 py-1 rounded">
+                  {blog?.categories?.[0]}
                 </span>
-                <p class="text-gray-500 text-sm  mt-0">December 21, 2023</p>
-            </div>
-            <p class="text-base  mt-0 mb-2.5 text-gray-500 font-medium">
-                In the dynamic world of technology and advertising, wearable tech is emerging as a
-                frontier brimming with innovative opportunities. As an expert in tech gadgets and
-                their intersection with advertising, I am excited to delve into how wearable
-                technology is not…
-            </p>
-            <a href="#"
-                class="text-purple-600 text-base font-medium inline-flex items-center mt-4 hover:text-[#443ab9]">
-                Read more <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+                <p
+                  set:html={blog?.content?.slice(0, 400)}
+                  class="text-base mt-0 mb-2.5 text-[#6b7280] font-medium"
+                ></p>
+                <a
+                  href={`/${blog?.slug}/`}
+                  class="text-[#776bff] text-base font-medium inline-flex items-center hover:text-[#443ab9]"
+                >
+                  Read more{" "}
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                    class="w-4 ml-1.5"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"
+                    />
                   </svg>
-            </a>
+                </a>
+              </div>
+            ))
+          }
         </div>
-    </div>
-    <div class=" rounded-2xl overflow-hidden py-6 flex gap-3">
-        <div class="col-4">
-            <img src="/images/Adaptation-Strategies.jpg" alt="Wearable Tech"
-            class="w-full object-cover rounded-[0.5rem] mb-[1.5rem]" />
-        </div>
-        <div class="px-4">
-            <h2 class="text-2xl font-semibold  mb-2.5 leading-7 text-[#111928]">
-                Wearable Tech in Advertising: Charting the Course of Immersive Marketing
-            </h2>
-            <div class="flex gap-2 items-center mb-2.5">
-                <span
-                    class="inline-block bg-purple-200 text-purple-600 text-xs font-semibold uppercase tracking-wide px-2 py-1 rounded">
-                    Updates
-                </span>
-                <p class="text-gray-500 text-sm  mt-0">December 21, 2023</p>
-            </div>
-            <p class="text-base  mt-0 mb-2.5 text-gray-500 font-medium">
-                In the dynamic world of technology and advertising, wearable tech is emerging as a
-                frontier brimming with innovative opportunities. As an expert in tech gadgets and
-                their intersection with advertising, I am excited to delve into how wearable
-                technology is not…
-            </p>
-            <a href="#"
-                class="text-purple-600 text-base font-medium inline-flex items-center mt-4 hover:text-[#443ab9]">
-                Read more <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
-                  </svg>
-            </a>
-        </div>
-    </div>
-    <div class=" rounded-2xl overflow-hidden py-6 flex gap-3">
-        <div class="col-4">
-            <img src="/images/Groundbreaking-Trends-Defining.jpg" alt="Wearable Tech"
-            class="w-full object-cover rounded-[0.5rem] mb-[1.5rem]" />
-        </div>
-        <div class="px-4">
-            <h2 class="text-2xl font-semibold  mb-2.5 leading-7 text-[#111928]">
-                Wearable Tech in Advertising: Charting the Course of Immersive Marketing
-            </h2>
-            <div class="flex gap-2 items-center mb-2.5">
-                <span
-                    class="inline-block bg-purple-200 text-purple-600 text-xs font-semibold uppercase tracking-wide px-2 py-1 rounded">
-                    Updates
-                </span>
-                <p class="text-gray-500 text-sm mt-0">December 21, 2023</p>
-            </div>
-            <p class="text-base  mt-0 mb-2.5 text-gray-500 font-medium">
-                In the dynamic world of technology and advertising, wearable tech is emerging as a
-                frontier brimming with innovative opportunities. As an expert in tech gadgets and
-                their intersection with advertising, I am excited to delve into how wearable
-                technology is not…
-            </p>
-            <a href="#"
-                class="text-purple-600 text-base font-medium inline-flex items-center mt-4 hover:text-[#443ab9]">
-                Read more <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
-                  </svg>
-            </a>
-        </div>
+      </div>
     </div>
   </div>
-</div>  
+  <div class="bg-[#fafaff]">
+    <BlogCategories />
+    <div class="container mx-auto px-4 lg:py-8 py-8">
+      <Blogs blogs={currentBlogs} />
+    </div>
+    <Pagination section="blog" currentPage={1} totalPages={totalPages} />
+  </div>
   <SubscribeNewsletter />
 </Base>

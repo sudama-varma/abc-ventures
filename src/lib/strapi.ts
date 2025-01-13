@@ -4,9 +4,9 @@ import type { Site, SiteData } from "../interfaces/site";
 import type { CategriesData } from "../interfaces/category";
 
 const nativeBlogsData: BlogData[] = await fetchApi<BlogData[]>({
-  endpoint: "blogs",
+  endpoint: "posts",
   query: {
-    "filters[site][name]": "ABC Venture",
+    "filters[site][name]": "ABCVentures",
     sort: "updatedAt:desc",
     populate: "*",
   },
@@ -16,7 +16,7 @@ const nativeBlogsData: BlogData[] = await fetchApi<BlogData[]>({
 const siteData: SiteData[] = await fetchApi<SiteData[]>({
   endpoint: "sites",
   query: {
-    "filters[name]": "ABC Venture",
+    "filters[name]": "ABCVentures",
     populate: "*",
   },
   wrappedByKey: "data",
@@ -81,10 +81,10 @@ export const categories: CategriesData[] = (
     wrappedByKey: "data",
   })
 )
-// .filter(
-//   (cat) =>
-//     !!cat?.sites?.filter(
-//       (site) => site.name === "ABC Venture",
-//     ).length,
-// );
+.filter(
+  (cat) =>
+    !!cat?.sites?.filter(
+      (site) => site.name === "ABCVentures",
+    ).length,
+);
 
