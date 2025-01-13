@@ -6,7 +6,7 @@ import CompanyCultureSection from "@layouts/components/CompanyCultureSection.ast
 ---
 
 <Base showFooter={true}>
-  <section class="team-and-careers-page py-5">
+  <section class="team-and-careers-page py-5 pt-[96px] pb-[96px]">
     <div class="w-full flex justify-center my-5">
       <div class="w-1/2">
         <h1 class="text-white text-center">Embark on a Career That</h1>
@@ -17,18 +17,18 @@ import CompanyCultureSection from "@layouts/components/CompanyCultureSection.ast
         </p>
       </div>
     </div>
-    <div class="pb-3">
+    <div class="pb-3 container">
       <div class="w-full flex flex-wrap images-card">
-        <img class="w-1/2 p-4" src="/images/content-gallery-1-1024x417.jpg" />
-        <img class="w-1/4 p-4" src="/images/content-gallery-2.jpg" />
-        <img class="w-1/4 p-4" src="/images/content-gallery-3.jpg" />
-        <img class="w-1/4 p-4" src="/images/content-gallery-4.jpg" />
-        <img class="w-1/2 p-4" src="/images/content-gallery-5-1024x417.jpg" />
-        <img class="w-1/4 p-4" src="/images/content-gallery-6.jpg" />
+        <img class="w-1/2 p-2" src="/images/content-gallery-1-1024x417.jpg" />
+        <img class="w-1/4 p-2" src="/images/content-gallery-2.jpg" />
+        <img class="w-1/4 p-2" src="/images/content-gallery-3.jpg" />
+        <img class="w-1/4 p-2" src="/images/content-gallery-4.jpg" />
+        <img class="w-1/2 p-2" src="/images/content-gallery-5-1024x417.jpg" />
+        <img class="w-1/4 p-2" src="/images/content-gallery-6.jpg" />
       </div>
     </div>
   </section>
-  <div class="p-4 my-5 border-b">
+  <div class="p-4 my-5 border-b container lg:py-24 border-b-purple-300/50">
     <div class="grid grid-rows grid-cols-1 lg:grid-cols-2 gap-16">
       <div class="px-4">
         <h2 class="my-0 text-[3rem] font-semibold text-black-900">
@@ -51,34 +51,38 @@ import CompanyCultureSection from "@layouts/components/CompanyCultureSection.ast
     </div>
   </div>
 
-  <section class="container">
+  <section class="py-8 mx-auto alignfull lg:py-24">
+    <div class="container">
     <div>
-      <h1>Our Impact <span class="text-[#9d95fa]">by Numbers</span></h1>
+      <h1 class="my-0 text-gray-90">Our Impact <span class="text-[#9d95fa]" >by Numbers</span></h1>
       <p>Here’s a glimpse of the tangible impact our team has made:</p>
     </div>
     <div class="flex flex-wrap">
       <div class="w-1/4 p-4">
-        <h3 class="text-[#9d95fa]">20+ Startups Funded</h3>
-        <p>Investing in the future, one startup at a time.</p>
+        <h3 class="text-[#776bff] font-semibold">20+ <span class="text-[#b5aeff]">Startups Funded</span> </h3>
+        <p class="text-[#6b7280]">Investing in the future, one startup at a time.</p>
       </div>
       <div class="w-1/4 p-4">
-        <h3 class="text-[#9d95fa]">150+ Countries Reached</h3>
-        <p>Our global footprint expands across continents.</p>
-      </div>
-
-      <div class="w-1/4 p-4">
-        <h3 class="text-[#9d95fa]">100% Employee Growth</h3>
-        <p>Doubling our team to double our impact.</p>
+        <h3 class="text-[#776bff] font-semibold">150+ <span class="text-[#b5aeff]"> Countries Reached</span></h3>
+        <p class="text-[#6b7280]">Our global footprint expands across continents.</p>
       </div>
 
       <div class="w-1/4 p-4">
-        <h3 class="text-[#9d95fa]">10+ Industry Awards</h3>
-        <p>Recognition for innovation and excellence</p>
+        <h3 class="text-[#776bff] font-semibold">100% <span class="text-[#b5aeff]">Employee Growth</span></h3>
+        <p class="text-[#6b7280]">Doubling our team to double our impact.</p>
+      </div>
+
+      <div class="w-1/4 p-4">
+        <h3 class="text-[#776bff] font-semibold">10+ <span class="text-[#b5aeff]">Industry Awards</span></h3>
+        <p class="text-[#6b7280]">Recognition for innovation and excellence</p>
       </div>
     </div>
+  </div>
   </section>
 
-  <div class="row p-5 container my-5" >
+  <section>
+    <div class="container">
+      <div class="row p-5  my-5" >
     <div class="col-6">
       <h1>Explore Our Current Openings</h1>
       <p>
@@ -132,7 +136,9 @@ import CompanyCultureSection from "@layouts/components/CompanyCultureSection.ast
           Read more →
         </a>
       </div>
+      </div>
     </div>
   </div>
+</section>
   <CompanyCultureSection />
 </Base>
