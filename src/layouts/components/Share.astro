@@ -1,7 +1,7 @@
 ---
 import config from "@config/config.json";
 import { IoLogoFacebook } from "react-icons/io5/index.js";
-import { FaXTwitter } from "react-icons/fa6/index.js";
+import { FaLinkedin, FaReddit, FaTwitter, FaXTwitter } from "react-icons/fa6/index.js";
 
 const { base_url } = config.site;
 const {
@@ -22,58 +22,52 @@ const {
 };
 ---
 
-<div class="flex gap-4">
-  <p class="align-middle pt-3">Share on</p>
-  <ul class={`${className}`}>
-    <li class="inline-block">
-      {
-        isNative ? (
-          <a
-            aria-label="facebook share button"
-            href={`https://facebook.com/sharer/sharer.php?u=${base_url}/${slug}`}
-            target="_blank"
-            rel="noreferrer noopener"
-            class="text-xl text-[#9181CE]"
-          >
-            <IoLogoFacebook />
-          </a>
-        ) : (
-          <a
-            aria-label="facebook share button"
-            href={`https://facebook.com/sharer/sharer.php?u=${base_url}/post/${slug}`}
-            target="_blank"
-            rel="noreferrer noopener"
-            class="text-xl text-[#9181CE]"
-          >
-            <IoLogoFacebook />
-          </a>
-        )
-      }
+<div class=" gap-4 ">
+  <ul class={`${className} bg-[#f0efff] p-4`}>
+    <li class="block bg-[#1ca1f3] ">
+      <a
+        aria-label="twitter share button"
+        href={`https://twitter.com/intent/tweet/?text=${title}&amp;url=${base_url}/${slug}`}
+        target="_blank"
+        rel="noreferrer noopener"
+        class="text-xl text-white"
+      >
+        <FaTwitter />
+      </a>
     </li>
-    <li class="inline-block">
-      {
-        isNative ? (
-          <a
-            aria-label="twitter share button"
-            href={`https://twitter.com/intent/tweet/?text=${title}&amp;url=${base_url}/${slug}`}
-            target="_blank"
-            rel="noreferrer noopener"
-            class="text-xl text-[#E0007A]"
-          >
-            <FaXTwitter />
-          </a>
-        ) : (
-          <a
-            aria-label="twitter share button"
-            href={`https://twitter.com/intent/tweet/?text=${title}&amp;url=${base_url}/post/${slug}`}
-            target="_blank"
-            rel="noreferrer noopener"
-            class="text-xl text-[#E0007A]"
-          >
-            <FaXTwitter />
-          </a>
-        )
-      }
+    <li class="block bg-[#3b5999]">
+      <a
+        aria-label="facebook share button"
+        href={`https://facebook.com/sharer/sharer.php?u=${base_url}/post/${slug}`}
+        target="_blank"
+        rel="noreferrer noopener"
+        class="text-xl text-white"
+      >
+        <IoLogoFacebook />
+      </a>
+    </li>
+    <li class="block bg-[#0077b5]">
+      <a
+        aria-label="facebook share button"
+        href={`https://www.linkedin.com/shareArticle?mini=true&url=${base_url}/post/${slug}&title=${title}`}
+        target="_blank"
+        rel="noreferrer noopener"
+        class="text-xl text-white"
+      >
+        <FaLinkedin />
+      </a>
+    </li>
+
+    <li class="block bg-[#ff4500]">
+      <a
+        aria-label="facebook share button"
+        href={`https://www.reddit.com/submit?url=${base_url}/post/${slug}`}
+        target="_blank"
+        rel="noreferrer noopener"
+        class="text-xl text-white"
+      >
+        <FaReddit />
+      </a>
     </li>
   </ul>
 </div>
