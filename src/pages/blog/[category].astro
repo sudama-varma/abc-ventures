@@ -34,10 +34,6 @@ const filterByCategory = nativeBlogs.filter(
         blogCategory.toLowerCase() === category.replace(/-/g, " ")
     )
 );
-
-const totalPages = Math.ceil(
-  filterByCategory.length / config.settings.pagination
-);
 ---
 
 <Base showFooter={true}>
@@ -139,7 +135,6 @@ const totalPages = Math.ceil(
     <BlogCategories />
     <div class="container mx-auto px-4 lg:py-8 py-8">
       <Blogs blogs={filterByCategory} />
-      <Pagination section="blog" currentPage={1} totalPages={totalPages} />
     </div>
   </div>
   <SubscribeNewsletter />

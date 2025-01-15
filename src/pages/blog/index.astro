@@ -117,7 +117,9 @@ const { summary_length } = config.settings;
     <div class="container mx-auto px-4 lg:py-8 py-8">
       <Blogs blogs={currentBlogs} />
     </div>
-    <Pagination section="blog" currentPage={1} totalPages={totalPages} />
+    <div class="pb-[60px]">
+      <Pagination section="blog" currentPage={1} totalPages={totalPages} />
+    </div>
   </div>
   <SubscribeNewsletter />
 </Base>
