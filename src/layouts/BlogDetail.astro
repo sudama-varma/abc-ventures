@@ -38,27 +38,27 @@ const category = categories?.[0];
       />
       <div class="w-2/3">
         <div>
-          <div class="flex flex-wrap items-center gap-2 text-[16px]">
+          <div class="flex flex-wrap items-center gap-2 text-[16px] pb-4">
             <a href="/">
-              <span class="flex items-center">
+              <span class="flex items-center text-gray-500">
                 <IoHome style={{ height: 13, marginRight: 4 }} />
                 <span>Home</span>
               </span>
             </a>
             <a href="/blog/">
-              <span class="flex items-center">
+              <span class="flex items-center text-gray-500">
                 <FaChevronRight style={{ height: 13, marginInline: 4 }} />
                 <span>Blog</span>
               </span>
             </a>
             <a href={`/blog/${category}/`}>
-              <span class="flex items-center">
+              <span class="flex items-center text-gray-500">
                 <FaChevronRight style={{ height: 13, marginInline: 4 }} />
                 <span>{category}</span>
               </span>
             </a>
             <a href={`/${slug}/`}>
-              <span class="flex items-center">
+              <span class="flex items-center text-gray-500">
                 <FaChevronRight style={{ height: 13, marginInline: 4 }} />
                 <span>{title}</span>
               </span>
@@ -66,14 +66,14 @@ const category = categories?.[0];
           </div>
         </div>
         <article class="row justify-start mx-0">
-          <div class="w-full px-0">
+          <div class="w-full px-0 lg:mb-6 mb-4">
             <div class="text-center">
               <h1
                 set:html={markdownify(title)}
-                class="md:text-[48px] font-bolder text-[28px] text-[#000] text-start mb-[20px]"
+                class="md:text-[48px] font-semibold text-[28px] text-[#000] text-start mb-[20px]"
               />
             </div>
-            <div class="border-t flex gap-3 border-b mb-2 py-2">
+            <div class="flex flex-wrap items-center gap-4 py-4 text-base font-medium text-gray-500 border-t border-b border-gray-200">
               <div>
                 <span>By ABC Venture in </span>
                 <span class="font-semi-bold">

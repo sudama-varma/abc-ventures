@@ -1,68 +1,84 @@
 <section class="bg-[#f3f4f6] py-[6rem]" id="culture-section-container">
-    <div class="container mx-auto  px-4 items-center">
-        <div class="grid grid-rows  grid-cols-1 lg:grid-cols-2 gap-16 items-center flex ">
-            <div>
-                <img class="h-auto w-full rounded-[35px]" src="/images/OurCulture.jpg"
-                    alt="OurCulture" />
+  <div class="container mx-auto px-4 items-center">
+    <div
+      class="grid grid-rows grid-cols-1 lg:grid-cols-2 gap-16 items-center flex"
+    >
+      <div>
+        <img
+          class="h-auto w-full rounded-[35px]"
+          src="/images/OurCulture.jpg"
+          alt="OurCulture"
+        />
+      </div>
+      <div class="px-4">
+        <h2 class="my-0 text-[3rem] font-semibold text-black-900">
+          Our Culture:
+          <span class="block text-[#9d95fa] font-semibold"
+            >The Heart of Innovation</span
+          >
+        </h2>
+
+        <div class="w-full border-y py-3 my-3 flex flex-col gap-[2rem]">
+          <!-- Accordion Item 1 (Open by Default) -->
+          <div class="">
+            <button
+              id="button-1"
+              class="w-full text-left px-4 py-2 text-2xl font-semibold text-[#4f44d1] hover:bg-gray-100 flex justify-between items-center"
+              onclick="toggleAccordion(1)"
+            >
+              Collaborative Environment
+            </button>
+            <div id="content-1" class="px-4 py-2 block">
+              <p class="text-gray-600">
+                In our collaborative environment, we bring together diverse
+                minds and creative perspectives, fostering a culture where
+                teamwork and creativity flourish. This approach is central to
+                solving complex challenges and driving innovation forward.
+              </p>
             </div>
-            <div class="px-4">
-                <h2 class="my-0 text-[3rem] font-semibold text-black-900">Our Culture:
-                    <span class="block text-[#9d95fa]">The Heart of Innovation</span>
-                </h2>
+          </div>
 
-                <div class="w-full border-y py-3 my-3  flex flex-col gap-[2rem]">
-                    <!-- Accordion Item 1 (Open by Default) -->
-                    <div class="">
-                        <button id="button-1"
-                            class="w-full text-left px-4 py-2 text-2xl font-medium text-[#4f44d1] hover:bg-gray-100 flex justify-between items-center"
-                            onclick="toggleAccordion(1)">
-                            Collaborative Environment
-                        </button>
-                        <div id="content-1" class="px-4 py-2 block">
-                            <p class="text-gray-600">
-                                In our collaborative environment, we bring together diverse minds and creative
-                                perspectives, fostering a culture where teamwork and creativity flourish. This
-                                approach is central to solving complex challenges and driving innovation
-                                forward.
-                            </p>
-                        </div>
-                    </div>
-
-                    <!-- Accordion Item 2 -->
-                    <div class="">
-                        <button id="button-2"
-                            class="w-full text-left px-4 py-2 text-2xl font-medium text-[#9d95fa] hover:bg-gray-100 flex justify-between items-center"
-                            onclick="toggleAccordion(2)">
-                            Continuous Learning
-                        </button>
-                        <div id="content-2" class="px-4 py-2 hidden">
-                            <p class="text-gray-600">
-                                At ABC Ventures, we champion continuous learning, providing our team with
-                                opportunities for ongoing personal and professional development. We believe that
-                                growth and education are key to staying ahead in the fast-evolving world of
-                                venture capital and startups.
-                            </p>
-                        </div>
-                    </div>
-
-                    <!-- Accordion Item 3 -->
-                    <div>
-                        <button id="button-3"
-                            class="w-full text-left px-4 py-2 text-2xl font-medium text-[#9d95fa] hover:bg-gray-100 flex justify-between items-center"
-                            onclick="toggleAccordion(3)">
-                            Global Impact
-                        </button>
-                        <div id="content-3" class="px-4 py-2 hidden">
-                            <p class="text-gray-600">
-                                Our commitment extends beyond business success; we strive to make a meaningful
-                                difference in the world through our investments, actions, and community
-                                engagement. Our focus on global impact drives us to create lasting, positive
-                                change across industries and communities.
-                            </p>
-                        </div>
-                    </div>
-                </div>
+          <!-- Accordion Item 2 -->
+          <div class="">
+            <button
+              id="button-2"
+              class="w-full text-left px-4 py-2 text-2xl font-medium text-[#9d95fa] hover:bg-gray-100 flex justify-between items-center"
+              onclick="toggleAccordion(2)"
+            >
+              Continuous Learning
+            </button>
+            <div id="content-2" class="px-4 py-2 hidden">
+              <p class="text-gray-600">
+                At ABC Ventures, we champion continuous learning, providing our
+                team with opportunities for ongoing personal and professional
+                development. We believe that growth and education are key to
+                staying ahead in the fast-evolving world of venture capital and
+                startups.
+              </p>
             </div>
+          </div>
+
+          <!-- Accordion Item 3 -->
+          <div>
+            <button
+              id="button-3"
+              class="w-full text-left px-4 py-2 text-2xl font-medium text-[#9d95fa] hover:bg-gray-100 flex justify-between items-center"
+              onclick="toggleAccordion(3)"
+            >
+              Global Impact
+            </button>
+            <div id="content-3" class="px-4 py-2 hidden">
+              <p class="text-gray-600">
+                Our commitment extends beyond business success; we strive to
+                make a meaningful difference in the world through our
+                investments, actions, and community engagement. Our focus on
+                global impact drives us to create lasting, positive change
+                across industries and communities.
+              </p>
+            </div>
+          </div>
         </div>
+      </div>
     </div>
+  </div>
 </section>
