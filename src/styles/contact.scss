@@ -40,14 +40,29 @@ body:has(.blog-detail-page) .headerWrapper nav{
     background-color: #ebf5ff;
     margin-left: auto;
     margin-right: auto;
-    margin-top: -245px !important;
+    margin-top: -180px !important;
     border-radius: 32px;
     padding: 2rem;
     max-width: 810px;
 
     .btn-send-message{
-        background:linear-gradient(0deg, rgba(0,0,0,0.2), rgba(0,0,0,0.2)),#5e52e8;
-        border-radius: 16px;
+        background:#5e52e8;
         color: #ebf5ff;
+    }
+}
+
+[type='checkbox']:focus, [type='radio']:focus{
+    --tw-ring-offset-color:#5e52e8;
+}
+[type='checkbox']:checked, [type='radio']:checked{
+    background-color: #5e52e8 !important;
+    border-radius: 4px;
+}
+
+
+@media screen and (max-width: 550px) {
+    .contact-form{
+        padding: 1.5rem;
+        margin-top: -230px !important;
     }
 }

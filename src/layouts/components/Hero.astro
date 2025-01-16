@@ -3,7 +3,7 @@ import { scrollToElement } from "@lib/utils";
 import ScrollButton from "@components/ScrollButton";
 ---
 
-<section class="homeBanner  max-sm:pt-[2rem]  max-sm:pb-[2rem] max-md:pt-[4rem] bg-no-repeat bg-[url('/images/hero-image.webp')] bg-auto bg-right-bottom bg-[#111928] pt-[7rem] pb-[4rem]">
+<section class="homeBanner  max-sm:!pt-[2.5rem] sm:pt-[2rem] max-sm:pb-[2rem] max-md:pt-[4rem] bg-no-repeat bg-[url('/images/hero-image.webp')] bg-auto bg-right-bottom bg-[#111928] pt-[7rem] pb-[4rem]">
     <div class="container mx-auto px-4">
         <div class="row">
             <div class="col-sm-12">
@@ -22,11 +22,11 @@ import ScrollButton from "@components/ScrollButton";
                                     clip-rule="evenodd"></path>
                             </svg>
                         </a>
-                        <h1 class="max-sm:text-[2rem] text-[6rem] max-md:text-[4rem] max-lg:text-[5rem] text-[#ebf5ff] max-w-[56rem] font-semibold">Shaping the Future of
+                        <h1 class="max-sm:text-[3rem] text-[6rem] max-md:text-[4rem] max-lg:text-[5rem] text-[#ebf5ff] max-w-[56rem] font-semibold">Shaping the Future of
                             Startups with <span class="text-[#9d95fa] font-medium">ABC Ventures</span></h1>
                     </div>
                     <div class="btns flex max-sm:flex-col  items-center">
-                        <ScrollButton client:load elementId="vision-section-container" customClass="max-w-fit scrollBtn text-[#f9f9f9] flex items-center gap-2 font-semibold bg-[#4f44d1] rounded-[1rem] px-[5rem] py-[.875rem] text-[1rem] hover:bg-[#776bff] hover:text-[#f9f9f9]">
+                        <ScrollButton client:load elementId="vision-section-container" customClass="max-w-fit scrollBtn text-[#f9f9f9] flex items-center gap-2 font-semibold bg-[#4f44d1] rounded-[1rem] px-[5rem] py-[.875rem] text-[1rem] hover:bg-[#776bff] hover:text-[#f9f9f9] order-2 md:order-1">
                             Scroll down
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 17.25 12 21m0 0-3.75-3.75M12 21V3" />
@@ -34,7 +34,7 @@ import ScrollButton from "@components/ScrollButton";
                         </ScrollButton>
                         
                         <ScrollButton client:load elementId="culture-section-container" 
-                            customClass="px-[0.75rem] max-w-fit py-[1.25rem] text-[#f0efff] font-semibold text-[1.25rem] bg-transparent  border-0">Our
+                            customClass="px-[0.75rem] max-w-fit py-[1.25rem] text-[#f0efff] font-semibold text-[1.25rem] bg-transparent  border-0 order-1 md:order-2">Our
                             Company</ScrollButton>
                     </div>
                 </div>

@@ -137,7 +137,7 @@ const currentBlogs = nativeBlogs.slice(indexOfFirstBlog, indexOfLastBlog);
       <Blogs blogs={currentBlogs} />
     </div>
     <div class="pb-[60px]">
-      <Pagination section="blog" currentPage={page} totalPages={totalPages} />
+      <Pagination section="blog" currentPage={Number(page)} totalPages={totalPages} />
     </div>
   </div>
   <SubscribeNewsletter />
