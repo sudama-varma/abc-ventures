@@ -4,43 +4,52 @@ import CompanyCultureSection from "@layouts/components/CompanyCultureSection.ast
 ---
 
 <Base showFooter={true}>
-  <section class="team-and-careers-page py-5 pt-[96px] pb-[96px]">
-    <div class="w-full flex justify-center my-5">
-      <div class="w-1/2">
-        <h1 class="text-white text-center">Embark on a Career That</h1>
-        <h1 class="text-center text-[#9d95fa]">Redefines Industries</h1>
-        <p class="text-white text-center px-4">
+  <section class="team-and-careers-page py-5 sm:pt-[96px] sm:pb-[96px] sm:py-8">
+    <div class="container">
+    <div class="w-full flex justify-center my-5 lg:px-0 px-2">
+      <div class="w-full max-w-[978px]">
+        <h1 class="leading-[4.5rem] text-white text-left md:text-center text-5xl md:text-6xl md:leading-[4.5rem] font-semibold">
+          Embark on a Career That
+          <span class="text-left md:text-center text-[#9d95fa] font-semibold">Redefines Industries</span>
+        </h1>
+        
+        <p class="text-white text-left md:text-center  max-w-[608px] mt-4 mb-0 mx-auto">
           Join ABC Ventures and be a part of a team that’s driving innovation
           and transforming the future of startups worldwide.
         </p>
       </div>
     </div>
-    <div class="pb-3 container">
-      <div class="w-full flex flex-wrap images-card">
-        <img class="w-1/2 p-2" src="/images/content-gallery-1-1024x417.jpg" />
-        <img class="w-1/4 p-2" src="/images/content-gallery-2.jpg" />
-        <img class="w-1/4 p-2" src="/images/content-gallery-3.jpg" />
-        <img class="w-1/4 p-2" src="/images/content-gallery-4.jpg" />
-        <img class="w-1/2 p-2" src="/images/content-gallery-5-1024x417.jpg" />
-        <img class="w-1/4 p-2" src="/images/content-gallery-6.jpg" />
+   
+      <div class="w-full flex flex-wrap images-card lg:mt-12 pb-3 lg:px-0 px-2">
+        <img class="md:w-1/2 w-full  p-0 md:p-2 pb-3" src="/images/content-gallery-1-1024x417.jpg" />
+        <img class="md:w-1/4 w-full  p-0 md:p-2 pb-3" src="/images/content-gallery-2.jpg" />
+        <img class="md:w-1/4 w-full  p-0 md:p-2 pb-3 md:block hidden" src="/images/content-gallery-3.jpg" />
+        <img class="md:w-1/4 w-full  p-0 md:p-2 pb-3 md:block hidden" src="/images/content-gallery-4.jpg" />
+        <img class="md:w-1/2 w-full  p-0 md:p-2 pb-3 md:block hidden" src="/images/content-gallery-5-1024x417.jpg" />
+        <img class="md:w-1/4 w-full  p-0 md:p-2 pb-3 md:block hidden" src="/images/content-gallery-6.jpg" />
       </div>
     </div>
   </section>
-  <div class="p-4 my-5 border-b container lg:py-24 border-b-purple-300/50">
-    <div class="grid grid-rows grid-cols-1 lg:grid-cols-2 gap-16">
-      <div class="px-4">
-        <h2 class="my-0 text-[3rem] font-semibold text-black-900">
+  <section class="mx-auto alignfull bg-[#fafaff]">
+    <div class="container">
+  <div class="border-b border-b-purple-300/50 lg:py-24 py-8 lg:px-0 px-2">
+    <div class="grid grid-rows grid-cols-1 lg:grid-cols-2 md:gap-16 gap-8">
+      <div class="px-0 lg:px-4">
+        <h2 class="my-0 text-[2.313rem] md:text-[3rem] font-semibold text-black-900 leading-[3.5rem]">
           Why Choose
 
           <span class="block text-[#9d95fa]">ABC Ventures?</span>
         </h2>
       </div>
-      <div class="px-4 text-[#6b7280] text-base font-medium">
+      <div class="px-0 lg:px-4 text-[#6b7280] text-base font-medium">
         <p class="mb-[1.2rem]">
           At ABC Ventures, we don’t just offer jobs; we offer career-defining
           opportunities. Here, you’ll be immersed in an environment that values
           innovation, fosters growth, and encourages every team member to push
-          the boundaries of what’s possible. Being part of our team means more
+          the boundaries of what’s possible.
+        </p>
+        <p>
+         Being part of our team means more
           than working for a leading venture capital firm; it means being at the
           heart of progress, working alongside industry experts, and
           contributing to projects that leave a lasting impact.
@@ -49,67 +58,68 @@ import CompanyCultureSection from "@layouts/components/CompanyCultureSection.ast
     </div>
   </div>
 
-  <section class="py-8 mx-auto alignfull lg:py-24">
-    <div class="container">
+
+    <div class="lg:py-24 py-8 lg:px-0 px-2">
       <div>
-        <h1 class="my-0 text-gray-90 font-medium">
+        <h2 class="my-0 text-gray-90 font-semibold text-[2.313rem] md:text-[3rem] leading-[3.5rem]">
           Our Impact <span class="text-[#9d95fa]">by Numbers</span>
-        </h1>
-        <p class="mb-[60px] mt-[10px] font-medium">
+        </h2>
+        <p class="md:mb-[60px] md:mt-[10px] mt-4 font-medium text-[0.875rem] md:text-[1rem]">
           Here’s a glimpse of the tangible impact our team has made:
         </p>
       </div>
-      <div class="flex flex-wrap">
-        <div class="w-1/4 p-4">
+      <div class="grid gap-8 mt-8 text-gray-900 sm:grid-cols-4 lg:gap-16 lg:mt-16 lg:grid-cols-4">
+        <div class="flex flex-col">
           <h3 class="text-[#776bff] font-semibold">
             20+ <span class="text-[#b5aeff]">Startups Funded</span>
           </h3>
-          <p class="text-[#6b7280] mt-5">
+          <p class="text-[#6b7280] mt-5 text-[0.875rem] md:text-[1rem]">
             Investing in the future, one startup at a time.
           </p>
         </div>
-        <div class="w-1/4 p-4">
+        <div class="flex flex-col">
           <h3 class="text-[#776bff] font-semibold">
             150+ <span class="text-[#b5aeff]"> Countries Reached</span>
           </h3>
-          <p class="text-[#6b7280] mt-5">
+          <p class="text-[#6b7280] mt-5 text-[0.875rem] md:text-[1rem]">
             Our global footprint expands across continents.
           </p>
         </div>
 
-        <div class="w-1/4 p-4">
+        <div class="flex flex-col">
           <h3 class="text-[#776bff] font-semibold">
             100% <span class="text-[#b5aeff]">Employee Growth</span>
           </h3>
-          <p class="text-[#6b7280] mt-5">
+          <p class="text-[#6b7280] mt-5 text-[0.875rem] md:text-[1rem]">
             Doubling our team to double our impact.
           </p>
         </div>
 
-        <div class="w-1/4 p-4">
+        <div class="flex flex-col">
           <h3 class="text-[#776bff] font-semibold">
             10+ <span class="text-[#b5aeff]">Industry Awards</span>
           </h3>
-          <p class="text-[#6b7280] mt-5">
+          <p class="text-[#6b7280] mt-5 text-[0.875rem] md:text-[1rem]">
             Recognition for innovation and excellence
           </p>
         </div>
       </div>
     </div>
+  </div>
   </section>
 
   <section>
-    <div class="container">
-      <div class="row p-5 my-5">
-        <div class="col-6">
-          <h1 class="font-semibold pb-3">Explore Our Current Openings</h1>
-          <p>
+    <div class="container py-8 mx-auto lg:py-24">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-16">
+        <div class="lg:px-0 px-2">
+          <h2 class="font-semibold text-[2.313rem] md:text-[3rem] leading-[3.5rem] mt-0 mb-4 text-black-900">Explore Our Current Openings</h2>
+          <p class="my-0 text-base text-gray-500">
             Ready to make your mark? Take a look at our exciting job
             opportunities.
           </p>
         </div>
-        <div class="col-6">
-          <div class="px-4">
+        <div class="lg:px-0 px-2">
+          <div class="mb-10">
             <span
               class="mb-4 inline-block bg-purple-100 text-[#776bff] text-xs font-semibold tracking-wide px-2 py-1 rounded"
             >
@@ -118,32 +128,31 @@ import CompanyCultureSection from "@layouts/components/CompanyCultureSection.ast
             <h2 class="text-2xl font-semibold mb-2.5 leading-7 text-[#111928]">
               Senior Data Analyst
             </h2>
-            <p class="text-gray-500 text-sm mb-2.5 mt-0">December 21, 2023</p>
             <p class="text-base mt-0 mb-1 text-gray-500 font-medium">
               Static websites are now used to bootstrap lots of websites and are
               becoming the basis for a variety of tools that even influence both
               web designers and developers influence both web designers and
               developers.
             </p>
-            <a
-              href="#"
-              class="text-[#776bff] font-semibold text-base font-medium inline-flex items-center mt-4 hover:text-[#443ab9] mb-8"
-              style="font-size: 18px;"
-            >
-              Read more →
-            </a>
+            <a href="#" class="text-[#776bff] font-semibold text-base font-medium inline-flex items-start mt-0 lg:mt-4 hover:text-[#443ab9] gap-2"
+            style="font-size: 18px;">
+            Read more
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-arrow-right-short" viewBox="0 0 16 16">
+              <path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8"/>
+            </svg>
+          </a>
           </div>
-          <div class="px-4">
+          <div class="border-t border-slate-200 pb-0 pt-6">
+            <span
+              class="mb-4 inline-block bg-purple-100 text-[#776bff] text-xs font-semibold tracking-wide px-2 py-1 rounded"
+            >
+              Updates
+            </span>
             <h2 class="text-2xl font-semibold mb-2.5 leading-7 text-[#111928]">
               Wearable Tech in Advertising: Charting the Course of Immersive
               Marketing
             </h2>
-            <span
-              class="mb-8 inline-block bg-purple-100 text-[#776bff] text-xs font-semibold tracking-wide px-2 py-1 rounded"
-            >
-              Updates
-            </span>
-            <p class="text-gray-500 text-sm mb-2.5 mt-0">December 21, 2023</p>
+            
             <p class="text-base mt-0 mb-2.5 text-gray-500 font-medium">
               In the dynamic world of technology and advertising, wearable tech
               is emerging as a frontier brimming with innovative opportunities.
@@ -151,13 +160,15 @@ import CompanyCultureSection from "@layouts/components/CompanyCultureSection.ast
               advertising, I am excited to delve into how wearable technology is
               not…
             </p>
-            <a
-              href="#"
-              class="text-[#776bff] font-semibold text-base font-medium inline-flex items-center mt-4 hover:text-[#443ab9] mb-8"
-              style="font-size: 18px;"
-            >
-              Read more →
-            </a>
+            <a href="#" class="text-[#776bff] font-semibold text-base font-medium inline-flex items-start mt-0 lg:mt-4 hover:text-[#443ab9] gap-2"
+            style="font-size: 18px;">
+            Read more
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-arrow-right-short" viewBox="0 0 16 16">
+              <path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8"/>
+            </svg>
+          </a>
+          
+          
           </div>
         </div>
       </div>

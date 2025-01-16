@@ -51,7 +51,7 @@ const category = categories?.[0];
                 <span>Blog</span>
               </span>
             </a>
-            <a href={`/blog/${category}/`}>
+            <a href={`/blog/${category?.toLowerCase()}/`}>
               <span class="flex items-center text-gray-500">
                 <FaChevronRight style={{ height: 13, marginInline: 4 }} />
                 <span>{category}</span>

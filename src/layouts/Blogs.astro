@@ -40,7 +40,7 @@ const { summary_length } = config.settings;
           </p>
         </div>
         <p
-          set:html={blog?.content?.slice(0, 400)}
+          set:html={removeSpecialChars(blog?.content?.slice(0, 400))}
           class="text-base mt-0 mb-2.5 text-gray-500 font-medium"
         ></p>
         <a

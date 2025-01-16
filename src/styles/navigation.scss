@@ -30,6 +30,9 @@ input#nav-toggle:checked ~ #nav-menu {
 
 .nav-link {
   @apply p-3 text-lg font-semibold text-light transition hover:text-primary md:p-4;
+  &.active{
+    color: #d8a5f2 !important;
+  }
 }
 
 .nav-dropdown-list {

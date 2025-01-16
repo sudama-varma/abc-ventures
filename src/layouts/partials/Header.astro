@@ -13,6 +13,7 @@ export interface NavigationLink {
   hasChildren?: boolean;
   children?: ChildNavigationLink[];
 }
+const url= Astro.url.pathname;
 
 const { main }: { main: NavigationLink[] } = menu;
 ---
@@ -58,6 +59,7 @@ const { main }: { main: NavigationLink[] } = menu;
                   <a
                     href={nav.url}
                     class="nav-link text-white hover:text-[#d8a5f2] font-medium"
+                    class:list={url== nav.url ? "active":""}
                   >
                     {nav.name}
                   </a>
