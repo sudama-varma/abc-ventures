@@ -13,22 +13,26 @@ export interface NavigationLink {
   hasChildren?: boolean;
   children?: ChildNavigationLink[];
 }
-const url= Astro.url.pathname;
 
+// Current page URL
+const url = Astro.url.pathname;
+
+// Navigation menu
 const { main }: { main: NavigationLink[] } = menu;
 ---
-
 <header class="headerWrapper bg-[#111928]">
   <nav class="bg-[#111928] py-[1.5rem]">
     <div class="container mx-auto px-4 flex items-center justify-between">
       <!-- Logo -->
       <Logo />
+
       <!-- Mobile Menu Button -->
       <button
         class="text-gray-200 hover:text-white focus:outline-none md:hidden"
         type="button"
         aria-label="Toggle navigation"
-        @click="open = !open"
+        aria-expanded="false"
+        id="menu-toggle"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -41,39 +45,51 @@ const { main }: { main: NavigationLink[] } = menu;
             stroke-linecap="round"
             stroke-linejoin="round"
             stroke-width="2"
-            d="M4 6h16M4 12h16m-7 6h7"></path>
+            d="M4 6h16M4 12h16m-7 6h7"
+          />
         </svg>
       </button>
+
       <!-- Navigation Links -->
-      <div
-        :class="{'block': open, 'hidden': !open}"
-        class="hidden md:flex md:items-center md:space-x-6"
-      >
-        <ul
-          class="flex flex-col md:flex-row md:items-center md:space-x-6 text-white"
-        >
-          {
-            main &&
+      <div id="mobile-menu" class="hidden md:flex md:items-center md:space-x-6">
+        <div class="menuWrap">
+          <ul class="flex flex-col md:flex-row md:items-center md:space-x-6 text-white">
+            {main &&
               main.map((nav) => (
                 <li>
                   <a
                     href={nav.url}
-                    class="nav-link text-white hover:text-[#d8a5f2] font-medium"
-                    class:list={url== nav.url ? "active":""}
+                    class={`nav-link text-white hover:text-[#d8a5f2] font-medium ${
+                      url === nav.url ? "active" : ""
+                    }`}
                   >
                     {nav.name}
                   </a>
                 </li>
-              ))
-          }
-        </ul>
-        <a href="/contact/">
-          <button
-            class="bg-[#4f44d1] text-[.875em] rounded-full font-medium text-white py-[0.5em] px-[2.75em] hover:bg-[#776bff] ml-0 md:ml-5 border-solid border-1 border-[#4f44d1] leading-tight"
-            >Contact Us</button
-          >
-        </a>
+              ))}
+          </ul>
+          <a href="/contact/">
+            <button
+              class="bg-[#4f44d1] text-[.875em] rounded-full font-medium text-white py-[0.5em] px-[2.75em] hover:bg-[#776bff] ml-0 md:ml-5 border-solid border-1 border-[#4f44d1] leading-tight"
+            >
+              Contact Us
+            </button>
+          </a>
+        </div>
       </div>
     </div>
   </nav>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const menuToggle = document.getElementById("menu-toggle");
+      const mobileMenu = document.getElementById("mobile-menu");
+
+      menuToggle?.addEventListener("click", () => {
+        const isHidden = mobileMenu?.classList.contains("hidden");
+        mobileMenu?.classList.toggle("hidden", !isHidden);
+        menuToggle.setAttribute("aria-expanded", isHidden ? "true" : "false");
+      });
+    });
+  </script>
 </header>

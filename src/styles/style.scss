@@ -92,3 +92,45 @@ section.homeBanner {
 .learn-more a{
   text-underline-offset: 4px; 
 }
+.menuWrap {
+  display: flex;
+}
+.table-children{
+  display: none;
+}
+@media (min-width: 40em) {  
+  body {
+    border: none !important;
+}
+}
+@media only screen and (max-width: 767px) {
+  #mobile-menu {
+    position: absolute;
+    left: 0;
+    top: 75px;
+    right: 0;
+    bottom: 0;
+    background-color: rgb(35, 56, 118);
+  }
+  .menuWrap {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+  }
+  .menuWrap ul {
+    display: flex;
+    gap: 30px;
+    margin-bottom: 30px;
+  }
+  .headerWrapper {
+    nav {
+      a {
+        font-size: 2rem;
+        button{
+          margin-left: 10px;
+        }
+      }
+    }
+  }
+}
