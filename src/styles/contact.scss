@@ -49,6 +49,19 @@ body:has(.blog-detail-page) .headerWrapper nav{
         background:#5e52e8;
         color: #ebf5ff;
     }
+    .phone-number-field{
+        padding: 0px;
+        .PhoneInputInput,.PhoneInputInput:focus-visible,.PhoneInputInput:focus{
+            border: none;
+            border-radius: 0px 15px 15px 0px;
+        }
+        .PhoneInputCountry{
+            background: white;
+            padding: 12px;
+            margin: 0;
+            border-radius: 15px 0px 0px 15px;
+        }
+    }
 }
 
 [type='checkbox']:focus, [type='radio']:focus{

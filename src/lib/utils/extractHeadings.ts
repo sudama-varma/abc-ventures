@@ -20,7 +20,6 @@ export const getHeadingsFromContent = (content: string) => {
 
 const extractChildren = (children: HTMLCollection) => {
   const extracted: any[] = [];
-  
   Array.from(children).forEach((child: Element) => {
     if (child.children.length > 0) {
       // If the child has further children, recursively extract them

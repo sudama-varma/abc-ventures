@@ -7,6 +7,7 @@ import dateFormat from "@lib/utils/dateFormat";
 import { IoHome } from "react-icons/io5";
 import { FaChevronRight } from "react-icons/fa6";
 import TableContent from "@components/TableContent";
+import readingTime from "@lib/utils/readingTime";
 const { blog, isNative }: { blog: Blog; isNative: boolean } = Astro.props as {
   blog: Blog;
   isNative: boolean;
@@ -82,7 +83,7 @@ const headings= getHeadingsFromContent(content);
                 </span>
               </div>
               <div>
-                <span class="text-[#6b7280]">2 min read</span>
+                <span class="text-[#6b7280]">{readingTime(content)}</span>
               </div>
               <div>
                 <span class="text-[#6b7280]">{dateFormat(blog.createdAt)}</span>
