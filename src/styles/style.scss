@@ -98,6 +98,28 @@ section.homeBanner {
 .table-children{
   display: none;
 }
+.tableSideContent ul li.cursor-pointer {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.tableSideContent {
+  ul {
+    margin-left: 0px;
+    li.cursor-pointer {
+      padding: 10px 0;
+      font-size: 1rem;
+      span  {
+        svg {
+          fill: #4f44d1;
+          color: #4f44d1;
+        }
+      }
+    }
+  }
+}
+
 @media (min-width: 40em) {  
   body {
     border: none !important;

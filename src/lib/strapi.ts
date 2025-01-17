@@ -12,7 +12,7 @@ const nativeBlogsData: BlogData[] = await fetchApi<BlogData[]>({
   },
   wrappedByKey: "data",
 });
-console.log(nativeBlogsData?.[0])
+
 const siteData: SiteData[] = await fetchApi<SiteData[]>({
   endpoint: "sites",
   query: {

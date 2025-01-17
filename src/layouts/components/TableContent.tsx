@@ -13,8 +13,8 @@ interface Headings {
 
 const TableContent = ({ headings, customClass }: Headings) => {
   return (
-    <div>
-      <ul className={customClass}>
+    <div className='tableSideContent bg-[#fafaff] p-3 rounded'>
+      <ul className={customClass  }>
         {
           headings?.map((heading: Heading, index: number) =>
             <>
@@ -33,7 +33,7 @@ const TableContent = ({ headings, customClass }: Headings) => {
           )
         }
       </ul>
-    </div>
+      </div>
   )
 }
 
