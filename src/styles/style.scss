@@ -95,21 +95,26 @@ section.homeBanner {
 .menuWrap {
   display: flex;
 }
-.table-children{
-  display: none;
-}
-.tableSideContent ul li.cursor-pointer {
-  display: flex;
-  align-items: flex-start;
-  gap: 10px;
-}
-
 .tableSideContent {
-  ul {
+  margin-left: 0px;
+  ul.mainTitle {
     margin-left: 0px;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    .table-children {
+      margin-bottom: 0px;
+      margin-left: 35px;
+      li{
+        padding: 0px !important;
+      }
+    }
     li.cursor-pointer {
       padding: 10px 0;
       font-size: 1rem;
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
       span  {
         svg {
           fill: #4f44d1;

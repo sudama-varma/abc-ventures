@@ -4,10 +4,12 @@ import {getHeadingsFromContent} from "@lib/utils/extractHeadings"
 import type { Blog } from "../interfaces/blog";
 import Share from "./components/Share.astro";
 import dateFormat from "@lib/utils/dateFormat";
-import { IoHome } from "react-icons/io5";
-import { FaChevronRight } from "react-icons/fa6";
 import TableContent from "@components/TableContent";
 import readingTime from "@lib/utils/readingTime";
+import pkg from 'react-icons/fa6/index';
+import pkgIos from 'react-icons/io5/index';
+const { IoHome } = pkgIos;
+const { FaChevronRight } = pkg;
 const { blog, isNative }: { blog: Blog; isNative: boolean } = Astro.props as {
   blog: Blog;
   isNative: boolean;
@@ -128,7 +130,7 @@ const headings= getHeadingsFromContent(content);
         <aside>
           <h3>Table of content</h3>
           <div>
-            <TableContent client:load headings={headings} />
+            <TableContent client:load headings={headings} isChild={false} customClass="tableSideContent bg-[#fafaff] p-3 rounded" />
           </div>
         </aside>
       </div>
