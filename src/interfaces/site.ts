@@ -1,24 +1,32 @@
 export interface SiteData {
   id: number;
-  name: string;
-  slug: string;
-  privacyPolicy: string;
-  logo: {
-    url: string;
-    width: number;
-    height: number;
-    formats?: {
-      small?: { url?: string; width?: number; height?: number };
+  attributes: {
+    name: string;
+    slug: string;
+    termsOfAgreement: string;
+    privacyPolicy: string;
+    logo: {
+      data: {
+        attributes: {
+          url: string;
+          width: number;
+          height: number;
+          formats?: {
+            small?: { url?: string; width?: number; height?: number };
+          };
+        };
+      };
     };
+    createdAt: string;
+    updatedAt: string;
   };
-  createdAt: string;
-  updatedAt: string;
 }
 
 export interface Site {
   id: number;
   name: string;
   slug: string;
+  termsOfAgreement: string;
   privacyPolicy: string;
   logoUrl: string;
   logoWidth: number;

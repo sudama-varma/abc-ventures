@@ -1,10 +1,12 @@
 ---
 import { markdownify, removeSpecialChars } from "@lib/utils/textConverter";
+import {getHeadingsFromContent} from "@lib/utils/extractHeadings"
 import type { Blog } from "../interfaces/blog";
 import Share from "./components/Share.astro";
 import dateFormat from "@lib/utils/dateFormat";
 import { IoHome } from "react-icons/io5";
-import { FaArrowLeft, FaChevronLeft, FaChevronRight } from "react-icons/fa6";
+import { FaChevronRight } from "react-icons/fa6";
+import TableContent from "@components/TableContent";
 const { blog, isNative }: { blog: Blog; isNative: boolean } = Astro.props as {
   blog: Blog;
   isNative: boolean;
@@ -24,6 +26,7 @@ const {
 
 // On this site we only want 1 category
 const category = categories?.[0];
+const headings= getHeadingsFromContent(content);
 ---
 
 <section class="section pt-[10px] blog-detail-page bg-white mt-4">
@@ -51,18 +54,16 @@ const category = categories?.[0];
                 <span>Blog</span>
               </span>
             </a>
-            <a href={`/blog/${category?.toLowerCase()}/`}>
+            <a class:list={!category ? 'hidden':""} href={`/blog/${category?.toLowerCase()}/`}>
               <span class="flex items-center text-gray-500">
                 <FaChevronRight style={{ height: 13, marginInline: 4 }} />
                 <span>{category}</span>
               </span>
             </a>
-            <a href={`/${slug}/`}>
               <span class="flex items-center text-gray-500">
                 <FaChevronRight style={{ height: 13, marginInline: 4 }} />
                 <span>{title}</span>
               </span>
-            </a>
           </div>
         </div>
         <article class="row justify-start mx-0">
@@ -125,6 +126,9 @@ const category = categories?.[0];
       <div class="w-1/3">
         <aside>
           <h3>Table of content</h3>
+          <div>
+            <TableContent client:load headings={headings} />
+          </div>
         </aside>
       </div>
     </div>

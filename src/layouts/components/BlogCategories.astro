@@ -14,8 +14,8 @@ const { category } = Astro.params;
       {
         categories.map((cItem) => (
             <li>
-              <a href={`/blog/${cItem.slug}/`}  class:list={category==cItem.slug ?"border-[#5e52e8] border text-[#5e52e8]":""} class="text-[#100d06] py-3 px-5 font-semibold  rounded-2xl hover:border-[#5e52e8] hover:border hover:text-[#5e52e8]">
-                  {cItem.name}
+              <a href={`/blog/${cItem.attributes?.slug}/`}  class:list={category==cItem.attributes?.slug ?"border-[#5e52e8] border text-[#5e52e8]":""} class="text-[#100d06] py-3 px-5 font-semibold  rounded-2xl hover:border-[#5e52e8] hover:border hover:text-[#5e52e8]">
+                  {cItem.attributes?.name}
               </a>
             </li>
         ))

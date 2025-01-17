@@ -8,8 +8,8 @@ import BlogCategories from "@layouts/components/BlogCategories.astro";
 import SubscribeNewsletter from "@layouts/components/SubscribeNewsletter.astro";
 import dateFormat from "@lib/utils/dateFormat";
 import { removeSpecialChars } from "@lib/utils/textConverter";
-const heroBlog = nativeBlogs[0];
-const listBlogs = nativeBlogs.slice(1, 4);
+const heroBlog = nativeBlogs?.[0];
+const listBlogs = nativeBlogs?.slice(1, 4);
 
 export async function getStaticPaths() {
   const totalPages = Math.ceil(nativeBlogs.length / config.settings.pagination);

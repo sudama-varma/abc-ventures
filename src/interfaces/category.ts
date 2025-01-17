@@ -1,12 +1,18 @@
 export interface CategriesData {
   id: number;
-  name: string;
-  slug: string;
-  createdAt: string;
-  updatedAt: string;
-  sites: {
+  attributes: {
     name: string;
-  }[];
+    slug: string;
+    createdAt: string;
+    updatedAt: string;
+    sites: {
+      data: {
+        attributes: {
+          name: string;
+        };
+      }[];
+    };
+  };
 }
 
 export interface Categry {

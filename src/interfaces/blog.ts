@@ -1,28 +1,37 @@
 export interface BlogData {
   id: number;
-  title: string;
-  content: string;
-  categories: {
-    id: number;
-    name: string;
+  attributes: {
+    title: string;
+    content: string;
+    categories: {
+      data: {
+        id: number;
+        attributes: {
+          name: string;
+          slug: string;
+          createdAt: string;
+          updatedAt: string;
+        };
+      }[];
+    };
+    image: {
+      data: {
+        attributes?: {
+          url?: string;
+          width?: number;
+          height?: number;
+          formats?: {
+            small?: { url?: string; width?: number; height?: number };
+            medium?: { url?: string; width?: number; height?: number };
+          };
+        };
+      } | null;
+    };
     slug: string;
     createdAt: string;
     updatedAt: string;
-  }[];
-  image: {
-    url?: string;
-    width?: number;
-    height?: number;
-    formats?: {
-      small?: { url?: string; width?: number; height?: number };
-      medium?: { url?: string; width?: number; height?: number };
-    };
-
-  } | null;
-  slug: string;
-  createdAt: string;
-  updatedAt: string;
-  publishedAt: string;
+    publishedAt: string;
+  };
 }
 
 export interface Blog {

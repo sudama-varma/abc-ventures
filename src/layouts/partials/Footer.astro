@@ -1,15 +1,5 @@
 ---
-import Social from "@components/Social.astro";
-import FtrLogo from "@components/footerLogo.astro";
-import config from "@config/config.json";
-import menu from "@config/menu.json";
-import social from "@config/social.json";
-import { markdownify } from "@lib/utils/textConverter";
-import { nativeBlogs } from "@lib/strapi";
-import { AiFillFacebook, AiFillTwitterCircle } from "react-icons/ai/index.js";
 
-const popularPosts = nativeBlogs.slice(1, 4);
-const trendingPosts = nativeBlogs.slice(6, 9);
 ---
 
 <footer class="footer py-5 bg-[#443ab9]">

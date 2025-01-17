@@ -9,11 +9,7 @@ import CommitmentSection from "@layouts/components/CommitmentSection.astro";
 import PartnersSection from "@layouts/components/PartnersSection.astro";
 import BlogsSection from "@layouts/components/BlogsSection.astro";
 import SubscribeNewsletter from "@layouts/components/SubscribeNewsletter.astro";
-import { nativeBlogs } from "@lib/strapi";
 
-const trendingPosts = nativeBlogs.slice(5, 8);
-const popularPosts = nativeBlogs.slice(8, 17);
-const heroPosts = nativeBlogs.slice(0, 3);
 ---
 
 <Base showFooter={true}>

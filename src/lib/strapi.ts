@@ -6,13 +6,13 @@ import type { CategriesData } from "../interfaces/category";
 const nativeBlogsData: BlogData[] = await fetchApi<BlogData[]>({
   endpoint: "posts",
   query: {
-    "filters[site][name]": "ABCVentures",
+    // "filters[site][name]": "ABCVentures",
     sort: "updatedAt:desc",
     populate: "*",
   },
   wrappedByKey: "data",
 });
-
+console.log(nativeBlogsData?.[0])
 const siteData: SiteData[] = await fetchApi<SiteData[]>({
   endpoint: "sites",
   query: {
@@ -22,53 +22,54 @@ const siteData: SiteData[] = await fetchApi<SiteData[]>({
   wrappedByKey: "data",
 });
 
-export const nativeBlogs: Blog[] = nativeBlogsData.map((blog) => {
+export const nativeBlogs: Blog[] = nativeBlogsData?.map((post) => {
   return {
-    id: blog.id,
-    title: blog.title,
-    slug: blog.slug,
-    content: blog.content,
-    categories: blog.categories.map(
-      (category) => category?.name || "",
+    id: post.id,
+    title: post.attributes.title,
+    slug: post.attributes.slug,
+    content: post.attributes.content,
+    categories: post.attributes.categories?.data?.map(
+      (category) => category?.attributes?.name || "",
     ),
-    imageUrl: blog.image?.url || null,
-    imageWidth: blog.image?.width || null,
-    imageHeight: blog.image?.height || null,
+    imageUrl: post.attributes.image?.data?.attributes?.url || null,
+    imageWidth: post.attributes.image?.data?.attributes?.width || null,
+    imageHeight: post.attributes.image?.data?.attributes?.height || null,
     imageSmallUrl:
-      blog.image?.formats?.small?.url || null,
+      post.attributes.image?.data?.attributes?.formats?.small?.url || null,
     imageSmallWidth:
-      blog.image?.formats?.small?.width || null,
+      post.attributes.image?.data?.attributes?.formats?.small?.width || null,
     imageSmallHeight:
-      blog.image?.formats?.small?.height || null,
+      post.attributes.image?.data?.attributes?.formats?.small?.height || null,
     imageMediumUrl:
-      blog.image?.formats?.medium?.url || null,
+      post.attributes.image?.data?.attributes?.formats?.medium?.url || null,
     imageMediumWidth:
-      blog.image?.formats?.medium?.width || null,
+      post.attributes.image?.data?.attributes?.formats?.medium?.width || null,
     imageMediumHeight:
-      blog.image?.formats?.medium?.height || null,
-    createdAt: blog.createdAt,
-    updatedAt: blog.updatedAt,
-    publishedAt: blog.publishedAt,
+      post.attributes.image?.data?.attributes?.formats?.medium?.height || null,
+    createdAt: post.attributes.createdAt,
+    updatedAt: post.attributes.updatedAt,
+    publishedAt: post.attributes.publishedAt,
   };
 });
 
-export const site: Site[] = siteData.map((site) => {
+export const site: Site[] = siteData?.map((site) => {
   return {
     id: site.id,
-    name: site.name,
-    slug: site.slug,
-    privacyPolicy: site.privacyPolicy,
-    logoUrl: site.logo?.url,
-    logoWidth: site.logo?.width,
-    logoHeight: site.logo?.height,
+    name: site.attributes.name,
+    slug: site.attributes.slug,
+    termsOfAgreement: site.attributes.termsOfAgreement,
+    privacyPolicy: site.attributes.privacyPolicy,
+    logoUrl: site.attributes.logo?.data.attributes.url,
+    logoWidth: site.attributes.logo?.data.attributes.width,
+    logoHeight: site.attributes.logo?.data.attributes.height,
     logoSmallUrl:
-      site.logo?.formats?.small?.url || null,
+      site.attributes.logo?.data.attributes.formats?.small?.url || null,
     logoSmallWidth:
-      site.logo?.formats?.small?.width || null,
+      site.attributes.logo?.data.attributes.formats?.small?.width || null,
     logoSmallHeight:
-      site.logo?.formats?.small?.height || null,
-    createdAt: site.createdAt,
-    updatedAt: site.updatedAt,
+      site.attributes.logo?.data.attributes.formats?.small?.height || null,
+    createdAt: site.attributes.createdAt,
+    updatedAt: site.attributes.updatedAt,
   };
 });
 
@@ -83,8 +84,8 @@ export const categories: CategriesData[] = (
 )
 .filter(
   (cat) =>
-    !!cat?.sites?.filter(
-      (site) => site.name === "ABCVentures",
+    !!cat.attributes.sites?.data?.filter(
+      (site) => site.attributes.name === "ABCVentures",
     ).length,
 );
 

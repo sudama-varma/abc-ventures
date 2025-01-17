@@ -2,7 +2,7 @@
 import { nativeBlogs } from "@lib/strapi";
 import dateFormat from "@lib/utils/dateFormat";
 
-const heroBlogs = nativeBlogs.slice(0, 3);
+const heroBlogs = nativeBlogs?.slice(0, 3);
 
 ---
 
@@ -44,9 +44,12 @@ const heroBlogs = nativeBlogs.slice(0, 3);
                 <span class="inline-block bg-purple-200 text-purple-600 text-xs font-semibold uppercase tracking-wide px-2 py-1 rounded">
                   {blog.categories?.[0]}
                 </span>
-                <h2 set:html={blog?.title} class="text-2xl font-semibold  my-2.5 leading-7 text-[#111928]">
+               <a href={`/${blog?.slug}/`} class="">
+
+                <h2 set:html={blog?.title} class="hover:underline text-2xl font-semibold  my-2.5 leading-7 text-[#111928]">
                   
                 </h2>
+               </a>
                 <p class="text-gray-500 text-sm mb-2.5 mt-0">
                   { dateFormat(blog?.createdAt)}
                 </p>

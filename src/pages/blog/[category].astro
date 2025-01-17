@@ -9,12 +9,12 @@ import { nativeBlogs } from "@lib/strapi";
 import { categories } from "@lib/strapi";
 import dateFormat from "@lib/utils/dateFormat";
 import { removeSpecialChars } from "@lib/utils/textConverter";
-const heroBlog = nativeBlogs[0];
-const listBlogs = nativeBlogs.slice(1, 4);
+const heroBlog = nativeBlogs?.[0];
+const listBlogs = nativeBlogs?.slice(1, 4);
 
 export async function getStaticPaths() {
   const latestCategories = categories.map((item) => {
-    return item.name.toLowerCase().replace(/ /g, "-");
+    return item.attributes?.name.toLowerCase().replace(/ /g, "-");
   });
 
   return latestCategories.map((category) => {
@@ -65,7 +65,7 @@ const filterByCategory = nativeBlogs.filter(
                 {dateFormat(heroBlog?.createdAt)}
               </p>
               <p class="text-base mt-0 mb-2.5 text-[#6b7280] font-medium">
-                {removeSpecialChars(heroBlog?.content.slice(0, 400))}
+                {removeSpecialChars(heroBlog?.content?.slice(0, 400))}
               </p>
               <a
                 href={`/${heroBlog?.slug}/`}

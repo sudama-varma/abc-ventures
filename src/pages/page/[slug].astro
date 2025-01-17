@@ -25,7 +25,7 @@ const totalPages = Math.ceil(nativeBlogs.length / config.settings.pagination);
 const currentPage = slug && !isNaN(Number(slug)) ? Number(slug) : 1;
 const indexOfLastBlog = currentPage * config.settings.pagination;
 const indexOfFirstBlog = indexOfLastBlog - config.settings.pagination;
-const currentBlogs = nativeBlogs.slice(indexOfFirstBlog, indexOfLastBlog);
+const currentBlogs = nativeBlogs?.slice(indexOfFirstBlog, indexOfLastBlog);
 ---
 
 <Base>
