@@ -18,7 +18,7 @@ const { summary_length } = config.settings;
 {
   blogs.map((blog: Blog, i: number) => (
     <div class="rounded-2xl overflow-hidden py-6 flex gap-3">
-      <div class="col-4">
+      <div class="col-4 max-md:hidden">
         <img
           src={blog?.imageSmallUrl}
           alt={blog?.title}
