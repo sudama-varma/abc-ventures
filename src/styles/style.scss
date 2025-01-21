@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -19,8 +19,6 @@
   @import "utilities";
 }
 
-
-
 body {
   font-family: "Plus Jakarta Sans", serif;
   font-size: 1em;
@@ -35,7 +33,7 @@ ul.navbar-nav {
 }
 
 ul.navbar-nav button {
-  font-size: .875em;
+  font-size: 0.875em;
   background-color: #4f44d1;
   border: 1px solid #4f44d1;
   color: #fff;
@@ -59,7 +57,7 @@ ul.navbar-nav li.nav-item a.nav-link:hover {
 
 @media (min-width: 768px) {
   .navbar-expand-md .navbar-collapse {
-      justify-content: flex-end;
+    justify-content: flex-end;
   }
 }
 
@@ -69,28 +67,26 @@ section.homeBanner {
   padding-bottom: 4rem;
 }
 
-
 // Gitanjali css
 
-.blog-detail-page h3{
+.blog-detail-page h3 {
   font-size: 1.45rem;
   line-height: 2.25rem;
   font-weight: 600;
-  margin: .5rem 0 1.5rem;
+  margin: 0.5rem 0 1.5rem;
 }
-.blog-detail-page h2{
+.blog-detail-page h2 {
   font-size: 2.25rem;
   line-height: 2.5rem;
   font-weight: 600;
-  margin: .5rem 0 1.5rem;
+  margin: 0.5rem 0 1.5rem;
 }
-.blog-detail-page p{
+.blog-detail-page p {
   color: #6b7280;
   font-size: 16px;
 }
-
-.learn-more a{
-  text-underline-offset: 4px; 
+.learn-more a {
+  text-underline-offset: 4px;
 }
 .menuWrap {
   display: flex;
@@ -105,7 +101,7 @@ section.homeBanner {
     .table-children {
       margin-bottom: 0px;
       margin-left: 35px;
-      li{
+      li {
         padding: 0px !important;
       }
     }
@@ -115,7 +111,7 @@ section.homeBanner {
       display: flex;
       align-items: flex-start;
       gap: 10px;
-      span  {
+      span {
         svg {
           fill: #4f44d1;
           color: #4f44d1;
@@ -132,12 +128,15 @@ section.homeBanner {
     li {
       display: flex;
       gap: 10px;
-      a, span, svg {
+      a,
+      span,
+      svg {
         color: #6b7280;
         fill: #6b7280;
       }
-      a, span {
-        font-size: .875rem;
+      a,
+      span {
+        font-size: 0.875rem;
       }
     }
   }
@@ -161,44 +160,56 @@ body:has(.not-found) footer.footer {
   display: none;
 }
 body:has(.blog-detail-page, .blog-page) .headerWrapper,
-body:has(.blog-detail-page, .blog-page) .headerWrapper nav{
-    background-color: #f9f9f9  !important;
-    a{
-        color: #000000;
-    }
-    img{
-        filter: invert(1);
-    }
-    button#menu-toggle {
+body:has(.blog-detail-page, .blog-page) .headerWrapper nav {
+  background-color: #f9f9f9 !important;
+  a {
+    color: #000000;
+  }
+  img {
+    filter: invert(1);
+  }
+  button#menu-toggle {
+    color: #000;
+    svg,
+    path {
       color: #000;
-      svg , path{
-        color: #000;
-        fill: #000;
-      }
+      fill: #000;
     }
+  }
 }
 body:has(.privacyContentContainer, .not-found) .headerWrapper,
-body:has(.privacyContentContainer, .not-found) .headerWrapper nav{
-    background-color: #f9f9f9  !important;
-    a{
-        color: #000000;
-    }
-    img{
-        filter: invert(1);
-    }
-    button#menu-toggle {
+body:has(.privacyContentContainer, .not-found) .headerWrapper nav {
+  background-color: #f9f9f9 !important;
+  a {
+    color: #000000;
+  }
+  img {
+    filter: invert(1);
+  }
+  button#menu-toggle {
+    color: #000;
+    svg,
+    path {
       color: #000;
-      svg , path{
-        color: #000;
-        fill: #000;
-      }
+      fill: #000;
     }
+  }
 }
-
-@media (min-width: 40em) {  
+.footerContent {
+  ul {
+    margin: 0px;
+  }
+  a {
+    img {
+      width: 88px;
+      height: auto;
+    }
+  }
+}
+@media (min-width: 40em) {
   body {
     border: none !important;
-}
+  }
 }
 @media only screen and (max-width: 991px) {
   .social-share {
@@ -210,25 +221,25 @@ body:has(.privacyContentContainer, .not-found) .headerWrapper nav{
 }
 @media only screen and (max-width: 767px) {
   body:has(.blog-detail-page) .headerWrapper,
-body:has(.blog-detail-page) .headerWrapper nav{
-    a{
-        color: #fff;
+  body:has(.blog-detail-page) .headerWrapper nav {
+    a {
+      color: #fff;
     }
-    img{
-        filter: invert(1);
+    img {
+      filter: invert(1);
     }
-
-}
-body:has(.privacyContentContainer, .blog-page, .not-found) .headerWrapper,
-body:has(.privacyContentContainer, .blog-page, .not-found) .headerWrapper nav{
-    a{
-        color: #fff;
+  }
+  body:has(.privacyContentContainer, .blog-page, .not-found) .headerWrapper,
+  body:has(.privacyContentContainer, .blog-page, .not-found)
+    .headerWrapper
+    nav {
+    a {
+      color: #fff;
     }
-    img{
-        filter: invert(1);
+    img {
+      filter: invert(1);
     }
-
-}
+  }
   #mobile-menu {
     position: absolute;
     left: 0;
@@ -252,7 +263,7 @@ body:has(.privacyContentContainer, .blog-page, .not-found) .headerWrapper nav{
     nav {
       a {
         font-size: 2rem;
-        button{
+        button {
           margin-left: 10px;
         }
       }
