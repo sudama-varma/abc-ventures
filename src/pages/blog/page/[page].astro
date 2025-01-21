@@ -63,7 +63,7 @@ const currentBlogs = nativeBlogs.slice(indexOfFirstBlog, indexOfLastBlog);
                 {dateFormat(heroBlog?.createdAt)}
               </p>
               <p class="text-base mt-0 mb-2.5 text-[#6b7280] font-medium">
-                {removeSpecialChars(heroBlog?.content.slice(0, 400))}
+                {removeSpecialChars(heroBlog?.content)?.slice(0, 400)}…
               </p>
               <a
                 href={`/${heroBlog?.slug}/`}
@@ -100,9 +100,11 @@ const currentBlogs = nativeBlogs.slice(indexOfFirstBlog, indexOfLastBlog);
                 </span>
                 <div>
                   <p
-                  set:html={blog?.content?.slice(0, 400)}
+                
                   class="text-base mt-0 mb-2.5 text-[#6b7280] font-medium"
-                ></p>
+                >
+                  {removeSpecialChars(blog?.content)?.slice(0, 400)}…
+                </p>
                 </div>
                 <a
                   href={`/${blog?.slug}/`}

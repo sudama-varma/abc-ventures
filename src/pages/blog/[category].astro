@@ -65,7 +65,7 @@ const filterByCategory = nativeBlogs.filter(
                 {dateFormat(heroBlog?.createdAt)}
               </p>
               <p class="text-base mt-0 mb-2.5 text-[#6b7280] font-medium">
-                {removeSpecialChars(heroBlog?.content?.slice(0, 400))}
+                {removeSpecialChars(heroBlog?.content)?.slice(0, 400)}…
               </p>
               <a
                 href={`/${heroBlog?.slug}/`}
@@ -101,9 +101,10 @@ const filterByCategory = nativeBlogs.filter(
                   {blog?.categories?.[0]}
                 </span>
                 <p
-                  set:html={blog?.content?.slice(0, 400)}
                   class="text-base mt-0 mb-2.5 text-[#6b7280] font-medium"
-                />
+                >
+                {removeSpecialChars(blog?.content)?.slice(0, 400)}…
+                </p>
                 <a
                   href={`/${blog?.slug}/`}
                   class="text-[#776bff] text-base font-medium inline-flex items-center hover:text-[#443ab9]"

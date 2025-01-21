@@ -60,3 +60,8 @@ input#nav-toggle:checked ~ #nav-menu {
     @apply visible opacity-100;
   }
 }
+.active-pagination{
+  color: #FFFFFF;
+  background-color: #4f44d1;
+  border-color: #4f44d1;
+}

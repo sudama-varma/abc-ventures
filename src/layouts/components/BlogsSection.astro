@@ -1,6 +1,7 @@
 ---
 import { nativeBlogs } from "@lib/strapi";
 import dateFormat from "@lib/utils/dateFormat";
+import { removeSpecialChars } from "@lib/utils/textConverter";
 
 const heroBlogs = nativeBlogs?.slice(0, 3);
 
@@ -53,7 +54,8 @@ const heroBlogs = nativeBlogs?.slice(0, 3);
                 <p class="text-gray-500 text-sm mb-2.5 mt-0">
                   { dateFormat(blog?.createdAt)}
                 </p>
-                <p set:html={blog.content?.slice(0,200)} class="text-base  mt-0 mb-2.5 text-gray-500 font-medium">
+                <p class="text-base  mt-0 mb-2.5 text-gray-500 font-medium">
+                  {removeSpecialChars(blog.content)?.slice(0,200)}…
                 </p>
                 <a
                   href={`/${blog?.slug}/`}

@@ -38,7 +38,7 @@ const headings= getHeadingsFromContent(content);
       <Share
         className="social-share mb-4 max-lg:hidden"
         title={title}
-        description={removeSpecialChars(content?.slice(0, 200))}
+        description={removeSpecialChars(content)?.slice(0, 200)}
         slug={slug}
         isNative={isNative}
       />

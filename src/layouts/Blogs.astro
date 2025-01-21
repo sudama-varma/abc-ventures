@@ -39,10 +39,9 @@ const { summary_length } = config.settings;
             {dateFormat(blog?.createdAt)}
           </p>
         </div>
-        <p
-          set:html={removeSpecialChars(blog?.content?.slice(0, 400))}
-          class="text-base mt-0 mb-2.5 text-gray-500 font-medium"
-        ></p>
+        <p class="text-base mt-0 mb-2.5 text-gray-500 font-medium">
+          {removeSpecialChars(blog?.content)?.slice(0, 300)}…
+        </p>
         <a
           href={`/${blog?.slug}/`}
           class="text-purple-600 text-base font-medium inline-flex items-center mt-4 hover:text-[#443ab9]"
