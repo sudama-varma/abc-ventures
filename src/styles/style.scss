@@ -164,6 +164,9 @@ body:has(.blog-detail-page, .blog-page) .headerWrapper nav {
   background-color: #f9f9f9 !important;
   a {
     color: #000000;
+    &:hover{
+      color: #d8a5f2;
+    }
   }
   img {
     filter: invert(1);
