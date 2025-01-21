@@ -150,7 +150,16 @@ section.homeBanner {
     margin: 12px 0;
   }
 }
+section.section.not-found {
+  background: #f9f9f9;
+  .bg-white.h-full {
+    height: calc(100vh - 83px);
+  }
+}
 
+body:has(.not-found) footer.footer {
+  display: none;
+}
 body:has(.blog-detail-page, .blog-page) .headerWrapper,
 body:has(.blog-detail-page, .blog-page) .headerWrapper nav{
     background-color: #f9f9f9  !important;
@@ -168,8 +177,8 @@ body:has(.blog-detail-page, .blog-page) .headerWrapper nav{
       }
     }
 }
-body:has(.privacyContentContainer) .headerWrapper,
-body:has(.privacyContentContainer) .headerWrapper nav{
+body:has(.privacyContentContainer, .not-found) .headerWrapper,
+body:has(.privacyContentContainer, .not-found) .headerWrapper nav{
     background-color: #f9f9f9  !important;
     a{
         color: #000000;
@@ -210,8 +219,8 @@ body:has(.blog-detail-page) .headerWrapper nav{
     }
 
 }
-body:has(.privacyContentContainer, .blog-page) .headerWrapper,
-body:has(.privacyContentContainer, .blog-page) .headerWrapper nav{
+body:has(.privacyContentContainer, .blog-page, .not-found) .headerWrapper,
+body:has(.privacyContentContainer, .blog-page, .not-found) .headerWrapper nav{
     a{
         color: #fff;
     }

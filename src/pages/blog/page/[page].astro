@@ -36,99 +36,101 @@ const currentBlogs = nativeBlogs.slice(indexOfFirstBlog, indexOfLastBlog);
 
 
 <Base showFooter={true}>
-  <div class="bg-[#ebf5ff] blog-page max-md:py-[6rem] max-sm:py-[3rem]">
-    <div class="container mx-auto px-4">
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-[5rem] mt-[4rem] max-sm:mt-[0]">
-        <div class="flex flex-col gap-6 items-center max-w-screen-md mx-auto">
-          <div class="overflow-hidden">
-            <img
-              src={heroBlog.imageUrl}
-              alt="Wearable Tech"
-              class="w-full object-cover rounded-[0.5rem] mb-[1.5rem]"
-            />
-            <div class="">
-              <span
-                class="inline-block bg-purple-200 text-[#100d06] text-xs font-semibold capitalize tracking-wide px-2 py-1 rounded"
-              >
-                {heroBlog?.categories?.[0]}
-              </span>
-              <a href={`/${heroBlog?.slug}/`}>
-                <h2
-                class="text-2xl font-semibold my-2.5 leading-7 text-[#111928] hover:underline"
-              >
-                {heroBlog?.title}
-              </h2>
-              </a>
-              <p class="text-gray-500 text-sm mb-2.5 mt-0">
-                {dateFormat(heroBlog?.createdAt)}
-              </p>
-              <p class="text-base mt-0 mb-2.5 text-[#6b7280] font-medium">
-                {removeSpecialChars(heroBlog?.content)?.slice(0, 400)}…
-              </p>
-              <a
-                href={`/${heroBlog?.slug}/`}
-                class="text-purple-600 text-base font-medium inline-flex items-center mt-4 hover:text-[#443ab9]"
-              >
-                Read more <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke-width="1.5"
-                  stroke="currentColor"
-                  class="w-5"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"></path>
-                </svg>
-              </a>
-            </div>
-          </div>
-        </div>
-        <div class="flex flex-col gap-6 items-center max-w-screen-md mx-auto">
-          {
-            listBlogs?.map((blog) => (
+  <div class="bg-[#ebf5ff] md:py-[6rem] max-sm:py-[3rem]">
+    <div class="bg-[#ebf5ff] blog-page">
+      <div class="container mx-auto px-4">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-[5rem]">
+          <div class="flex flex-col gap-6 items-center max-w-screen-md mx-auto">
+            <div class="overflow-hidden">
+              <img
+                src={heroBlog.imageUrl}
+                alt="Wearable Tech"
+                class="w-full object-cover rounded-[0.5rem] mb-[1.5rem]"
+              />
               <div class="">
-                <a href={`/${blog?.slug}/`}>
-                <h2 class="text-2xl font-semibold my-2.5 leading-7 text-[#100d06] hover:underline">
-                  {blog?.title}
-                </h2>
-            </a>
-                <span class="inline-block bg-purple-200 text-[#100d06] text-xs font-semibold capitalize tracking-wide px-2 py-1 rounded">
-                  {blog?.categories?.[0]}
+                <span
+                  class="inline-block bg-purple-200 text-[#100d06] text-xs font-semibold capitalize tracking-wide px-2 py-1 rounded"
+                >
+                  {heroBlog?.categories?.[0]}
                 </span>
-                <div>
-                  <p
-                
-                  class="text-base mt-0 mb-2.5 text-[#6b7280] font-medium"
+                <a href={`/${heroBlog?.slug}/`}>
+                  <h2
+                  class="text-2xl font-semibold my-2.5 leading-7 text-[#111928] hover:underline"
                 >
-                  {removeSpecialChars(blog?.content)?.slice(0, 400)}…
+                  {heroBlog?.title}
+                </h2>
+                </a>
+                <p class="text-gray-500 text-sm mb-2.5 mt-0">
+                  {dateFormat(heroBlog?.createdAt)}
                 </p>
-                </div>
+                <p class="text-base mt-0 mb-2.5 text-[#6b7280] font-medium">
+                  {removeSpecialChars(heroBlog?.content)?.slice(0, 400)}…
+                </p>
                 <a
-                  href={`/${blog?.slug}/`}
-                  class="text-[#776bff] text-base font-medium inline-flex items-center hover:text-[#443ab9]"
+                  href={`/${heroBlog?.slug}/`}
+                  class="text-purple-600 text-base font-medium inline-flex items-center mt-4 hover:text-[#443ab9]"
                 >
-                  Read more{" "}
-                  <svg
+                  Read more <svg
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"
                     viewBox="0 0 24 24"
                     stroke-width="1.5"
                     stroke="currentColor"
-                    class="w-4 ml-1.5"
+                    class="w-5"
                   >
                     <path
                       stroke-linecap="round"
                       stroke-linejoin="round"
-                      d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"
-                    />
+                      d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"></path>
                   </svg>
                 </a>
               </div>
-            ))
-          }
+            </div>
+          </div>
+          <div class="flex flex-col gap-6 items-center max-w-screen-md mx-auto">
+            {
+              listBlogs?.map((blog) => (
+                <div class="">
+                  <a href={`/${blog?.slug}/`}>
+                  <h2 class="text-2xl font-semibold my-2.5 leading-7 text-[#100d06] hover:underline">
+                    {blog?.title}
+                  </h2>
+              </a>
+                  <span class="inline-block bg-purple-200 text-[#100d06] text-xs font-semibold capitalize tracking-wide px-2 py-1 rounded">
+                    {blog?.categories?.[0]}
+                  </span>
+                  <div>
+                    <p
+                  
+                    class="text-base mt-0 mb-2.5 text-[#6b7280] font-medium"
+                  >
+                    {removeSpecialChars(blog?.content)?.slice(0, 400)}…
+                  </p>
+                  </div>
+                  <a
+                    href={`/${blog?.slug}/`}
+                    class="text-[#776bff] text-base font-medium inline-flex items-center hover:text-[#443ab9]"
+                  >
+                    Read more{" "}
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke-width="1.5"
+                      stroke="currentColor"
+                      class="w-4 ml-1.5"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"
+                      />
+                    </svg>
+                  </a>
+                </div>
+              ))
+            }
+          </div>
         </div>
       </div>
     </div>

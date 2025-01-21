@@ -3,14 +3,15 @@ import Base from "@layouts/Base.astro";
 ---
 
 <Base title={"Error 404"}>
-  <section class="section pt-0">
-    <div class="container">
-      <div class="flex items-center justify-center">
-        <div class="text-center  mx-auto">
-          <h1 class="lg:text-[9rem] text-[7rem]">404</h1>
-          <h2>Something’s missing.</h2>
+  <section class="section pt-0 not-found pb-0">
+    <div class="container px-5">
+    <div class="bg-white h-full">
+      <div class="flex items-center justify-center h-full">
+        <div class="text-center  mx-auto px-4">
+          <h1 class="mb-4 font-extrabold tracking-tight wp-block-heading text-7xl lg:text-9xl text-[#776bff]">404</h1>
+          <h2 class="mb-4 text-3xl font-bold tracking-tight text-gray-900 md:text-4x">Something’s missing.</h2>
 
-          <p>
+          <p class="mb-4 text-lg font-light text-dark">
             Sorry, we can’t find that page. You’ll find lots to explore on the
             home page.
           </p>
@@ -24,6 +25,7 @@ import Base from "@layouts/Base.astro";
           </a>
         </div>
       </div>
+    </div>
     </div>
   </section>
 </Base>
